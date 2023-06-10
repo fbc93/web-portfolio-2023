@@ -6,6 +6,7 @@ const config: GatsbyConfig = {
   siteMetadata: metaConfig,
   graphqlTypegen: true,
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
