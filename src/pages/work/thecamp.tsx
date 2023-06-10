@@ -1,10 +1,13 @@
 import { HeadFC } from "gatsby";
 import React from "react";
+import Layout from "../../components/layout";
 import { SEO } from "../../components/seo";
 
 export default function TheCamp() {
   return (
-    <main>더캠프</main>
+    <Layout>
+      <article>The camp</article>
+    </Layout>
   )
 }
 
