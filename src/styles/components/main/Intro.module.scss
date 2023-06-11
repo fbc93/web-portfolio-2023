@@ -11,9 +11,24 @@
   .container {
     width:100%;
 
+    @keyframes titleFadeIn {
+      from {
+        transform:translateY(50px);
+        opacity: 0;
+      }
+    
+      to {
+        transform:none;
+        opacity: 1;
+      }
+    }
+
     .title {
       width: fit-content;
       margin:auto;
+      opacity: 0;
+      animation: titleFadeIn 1s forwards;
+      animation-delay:0;
 
       .title_container {
         .sub_title {
@@ -58,13 +73,18 @@
       font-size: 2.5rem;
       letter-spacing: -1px;
       margin-bottom: 10vh;
+      opacity: 0;
+      animation: titleFadeIn 1s forwards;
+      animation-delay:0.5s;
 
       .first {
         margin-bottom: 5vh;
 
         & > div {
           .primary_color {
-            color:var(--primary-text);
+            background-color: var(--primary-text);
+            color: #ffffff;
+            padding: 0 5px;
           }
 
           .gray_color {
@@ -74,6 +94,13 @@
 
         & > div:first-child {
           margin-bottom: 1vh;
+        }
+
+        & > div:nth-child(2){
+          background: #cccccc;
+          width: fit-content;
+          margin: auto;
+          padding: 3px 10px;
         }
       }
 
