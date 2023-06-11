@@ -12,6 +12,9 @@
     width:100%;
 
     .title {
+      width: fit-content;
+      margin:auto;
+
       .title_container {}
     }
 
@@ -48,30 +51,84 @@
 
 @media screen and (max-width: 944px){
   .intro {
-    padding-top: calc(var(--944-header-height) + var(--top-value-header));
+    padding-top: calc(var(--944-header-height) + var(--top-value-header) + 8vh);
   }
 }
 
 @media screen and (max-width: 768px){
   .intro {
-    padding-top: calc(var(--768-header-height) + var(--top-value-header));
+    padding-top: calc(var(--768-header-height) + var(--top-value-header) + 8vh);
+
+    .container {
+
+
+      @keyframes bgMovingText {
+        from {
+          background-position: -100% calc(var(--768-header-height) + var(--top-value-header) + 5vh);
+        }
+      
+        to {
+          background-position: 100% calc(var(--768-header-height) + var(--top-value-header) + 5vh);
+        }
+      }
+      
+    }
   }
 }
 
 @media screen and (max-width: 530px){
   .intro {
-    padding-top: calc(var(--530-header-height) + var(--top-value-header));
+    padding-top: calc(var(--530-header-height) + var(--top-value-header) + 8vh);
+
+    .container {
+
+      @keyframes bgMovingText {
+        from {
+          background-position: -100% calc(var(--530-header-height) + var(--top-value-header) + 5vh);
+        }
+      
+        to {
+          background-position: 100% calc(var(--530-header-height) + var(--top-value-header) + 5vh);
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 460px){
   .intro {
-    padding-top: calc(var(--460-header-height) + var(--top-value-header));
+    padding-top: calc(var(--460-header-height) + var(--top-value-header) + 10vh);
+
+    .container {
+
+      @keyframes bgMovingText {
+        from {
+          background-position: -100% calc(var(--460-header-height) + var(--top-value-header) + 5vh);
+        }
+      
+        to {
+          background-position: 100% calc(var(--460-header-height) + var(--top-value-header) + 5vh);
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 445px){
   .intro {
-    padding-top: calc(var(--445-header-height) + var(--top-value-header));
+    padding-top: calc(var(--445-header-height) + var(--top-value-header) + 8vh);
+
+    .container {
+
+      @keyframes bgMovingText {
+        from {
+          background-position: -100% calc(var(--445-header-height) + var(--top-value-header) + 5vh);
+        }
+      
+        to {
+          background-position: 100% calc(var(--445-header-height) + var(--top-value-header) + 5vh);
+        }
+      }
+    }
   }
 }
