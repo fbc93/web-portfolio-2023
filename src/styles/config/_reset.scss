@@ -84,6 +84,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -103,12 +104,13 @@ section {
 
 html {
   font-size:10px;
-  background-color: var(--primary);
 }
 
 body {
+  font-size:1.6rem;
+  letter-spacing: -0.5px;
   line-height: 1;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-family: Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Malgun Gothic, sans-serif;
 }
 
 ol,

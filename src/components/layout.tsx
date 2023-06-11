@@ -1,7 +1,5 @@
 import React from "react";
-import Footer from "./footer";
-import Header from "./header";
-
+import Header from "./layout/header";
 interface ILayoutProps {
   children: any;
 }
@@ -12,7 +10,6 @@ export default function Layout({ children }: ILayoutProps) {
       <Header />
       <main>
         {children}
-        <Footer />
       </main>
     </div>
   );

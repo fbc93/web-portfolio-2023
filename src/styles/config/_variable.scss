@@ -1,3 +1,13 @@
 :root {
-  --primary: #dff9fb;
+  --z-index-header: 9999;
+  --desktop-max-width: 256rem;
+  --desktop-min-height: 72rem;
+  --desktop-padding-vh: 6rem; 
+  --laptop-max-width: 100rem;
+  --mobile-min-width: 34rem;
+  --mobile-padding-vh: 2rem;
+  --articleBg: #ffffff;
+  --line-color-header: #000000;
+  --primary-color-resume-status: #2137FF;
+  --update-text-color: #333333;
 }
