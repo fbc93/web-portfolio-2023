@@ -1,5 +1,14 @@
 :root {
   --z-index-header: 9999;
+  --top-value-header: 4rem;
+
+  --desktop-header-height: 127px;
+  --944-header-height:155px;
+  --768-header-height:249px;
+  --530-header-height:285px;
+  --460-header-height:237px;
+  --445-header-height:267px;
+
   --desktop-max-width: 256rem;
   --desktop-min-height: 72rem;
   --desktop-padding-vh: 6rem; 
@@ -10,4 +19,5 @@
   --line-color-header: #000000;
   --primary-color-resume-status: #2137FF;
   --update-text-color: #333333;
+  --z-index-intro-article: 1;
 }
