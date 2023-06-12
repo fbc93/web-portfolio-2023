@@ -47,9 +47,9 @@ export default function Intro({ introScrollRestoration }: any) {
         transform: 'translateY(35px)'
       },
       to: {
-        transform: 'translateY(5px)'
+        transform: 'translateY(0px)'
       },
-      delay: 2300,
+      delay: 1500,
     }), [])
 
   const [flowUpDescText, flowUpDescTextApi] = useSprings(1,
@@ -60,7 +60,7 @@ export default function Intro({ introScrollRestoration }: any) {
       to: {
         transform: 'translateY(0px)',
       },
-      delay: 3000,
+      delay: 2000,
     }), [])
 
   const [scrollDown, scrollDownApi] = useSprings(1,
@@ -71,7 +71,7 @@ export default function Intro({ introScrollRestoration }: any) {
       to: {
         opacity: 1
       },
-      delay: 3500,
+      delay: 3000,
     })
   )
 
@@ -99,7 +99,7 @@ export default function Intro({ introScrollRestoration }: any) {
                 <span>을 알아요</span>
               </strong>
               <div className={introStyles.logo}>
-                <Logo />
+                <Logo pathStyle={introStyles.st1} />
               </div>
             </div>
           </animated.div>
