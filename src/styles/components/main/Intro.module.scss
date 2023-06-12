@@ -2,6 +2,7 @@
   background-color: var(--articleBg);
   min-width: var(--mobile-min-width);
   width:100%;
+  height: 100vh;
   padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 10vh);
   padding-bottom: 10vh;
   padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
@@ -13,7 +14,7 @@
 
     .title {
       width: fit-content;
-      margin:auto;
+      margin:auto auto 8vh auto;
 
       .title_container {
         .sub_title {
@@ -44,10 +45,9 @@
         }
 
         .logo {
-          margin-bottom: 10vh;
           & > svg {
             max-width: 100%;
-            width: 112rem;
+            width: 90rem;
             height: 100%;
           }
         }
@@ -57,20 +57,19 @@
     .description {
       font-size: 2.5rem;
       letter-spacing: -1px;
-      margin-bottom: 10vh;
+      margin-bottom: 15vh;
 
       .first {
-        margin-bottom: 5vh;
+        margin-bottom: 3vh;
 
         & > div {
           .primary_color {
-            background-color: var(--primary-text);
-            color: #ffffff;
             padding: 0 5px;
           }
 
           .gray_color {
             color:var(--gray-text);
+            margin-right:8px;
           }
         }
 
@@ -79,15 +78,21 @@
         }
 
         & > div:nth-child(2){
-          background: #cccccc;
           width: fit-content;
           margin: auto;
-          padding: 3px 10px;
+          overflow: hidden;
+
+          & > span:nth-child(2){
+            transform: translateY(35px);
+            display: inline-block;
+            overflow: hidden;
+          }
         }
       }
 
       .last {
         line-height: 1.5;
+        overflow: hidden;
 
         & > div:nth-child(1) {
           font-weight: 600;
@@ -99,15 +104,48 @@
           background-color: var(--primary-text);
           color: var(--white-text);
           width: fit-content;
-          margin: 1.5vh auto auto;
+          margin: auto;
           padding: 0 10px;
+          transform: translateY(40px);
         }
+      }
+    }
+
+    @keyframes scrollDown {
+      from {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+        color: #999999;
+      }
+    
+      to {
+        transform: scale(0.8) translateY(30px);
+        opacity: 0;
+        color: #333333;
       }
     }
 
     .scroll_guide {
       position: relative;
       z-index: var(--z-index-scroll-icon);
+      width: fit-content;
+      margin:auto;
+
+      & > div:first-child {
+        color: var(--scroll-dwn-color);
+        font-size:1.6rem;
+        font-weight:400;
+      }
+
+      .scroll_dwn_icon {
+        & > svg {
+          animation: scrollDown 1s linear infinite;
+          display: block;
+          font-size: 4rem;
+          margin: auto;
+          color: var(--scroll-dwn-color);
+        }
+      }
     }
 
     @keyframes bgMovingText {

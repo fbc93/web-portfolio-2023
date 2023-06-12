@@ -2,6 +2,8 @@ import React from "react";
 import * as introStyles from "../../styles/components/main/Intro.module.scss";
 import Logo from "./logo";
 import { useScroll, animated, useSprings, config } from '@react-spring/web';
+import { FiChevronDown } from "react-icons/fi";
+
 
 export default function Intro({ introScrollRestoration }: any) {
 
@@ -15,7 +17,7 @@ export default function Intro({ introScrollRestoration }: any) {
     () => ({
       from: {
         opacity: 0,
-        transform: 'translateY(100px)'
+        transform: 'translateY(20px)'
       },
       to: {
         opacity: 1,
@@ -29,16 +31,49 @@ export default function Intro({ introScrollRestoration }: any) {
     () => ({
       from: {
         opacity: 0,
-        transform: 'translateY(100px)'
+        transform: 'translateY(20px)'
       },
       to: {
         opacity: 1,
         transform: 'translateY(0px)'
       },
       config: config.molasses,
-      delay: 400,
+      delay: 800,
     }), [])
 
+  const [flowUpText, flowUpTextApi] = useSprings(1,
+    () => ({
+      from: {
+        transform: 'translateY(35px)'
+      },
+      to: {
+        transform: 'translateY(5px)'
+      },
+      delay: 2300,
+    }), [])
+
+  const [flowUpDescText, flowUpDescTextApi] = useSprings(1,
+    () => ({
+      from: {
+        transform: 'translateY(40px)',
+      },
+      to: {
+        transform: 'translateY(0px)',
+      },
+      delay: 3000,
+    }), [])
+
+  const [scrollDown, scrollDownApi] = useSprings(1,
+    () => ({
+      from: {
+        opacity: 0
+      },
+      to: {
+        opacity: 1
+      },
+      delay: 3500,
+    })
+  )
 
   return (
     <animated.article className={introStyles.intro}
@@ -79,18 +114,27 @@ export default function Intro({ introScrollRestoration }: any) {
               </div>
               <div>
                 <strong className={introStyles.gray_color}>회색 영역 이 없는</strong>
-                <span> 개발자 이윤화입니다.</span>
+                {flowUpText.map((props, idx) => (
+                  <animated.span style={props} key={idx}>개발자 이윤화입니다.</animated.span>
+                ))}
               </div>
             </div>
             <div className={introStyles.last}>
-              <div>새로운 것을 배우고 도전하는 과정을 사랑(💙)합니다.</div>
-              <div>백엔드 / 프론트 / 디자인 / 마케팅 등</div>
-              <div>서로의 의견을 제시하고 맞춰갔던 지난 경험들에 기반하여</div>
-              <div>좀 더 넓은 시각으로 서비스를 바라봅니다.</div>
+              {flowUpDescText.map((props, idx) => (
+                <animated.div style={props} key={idx}>좀 더 넓은 시각으로 탐구하고 성장합니다.</animated.div>
+              ))}
             </div>
           </animated.div>
         ))}
-        <animated.div className={introStyles.scroll_guide}>Scroll Down</animated.div>
+
+        {scrollDown.map((props, idx) => (
+          <animated.div className={introStyles.scroll_guide} style={props} key={idx}>
+            <div>Please Scroll Down</div>
+            <div className={introStyles.scroll_dwn_icon}>
+              <FiChevronDown />
+            </div>
+          </animated.div>
+        ))}
         <div className={introStyles.bg_moving_text}></div>
       </div>
     </animated.article>
