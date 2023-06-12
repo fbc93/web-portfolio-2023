@@ -1,10 +1,32 @@
 import React from "react";
 import * as introStyles from "../../styles/components/main/Intro.module.scss";
 import Logo from "./logo";
+import { useScroll, animated, useSpring } from '@react-spring/web';
 
 export default function Intro({ introScrollRestoration }: any) {
+  const containerRef = React.useRef<HTMLDivElement>(null!)
+
+  const [textStyles, textApi] = useSpring(() => ({
+    y: '30px',
+    opacity: '0',
+  }))
+
+  const { scrollYProgress } = useScroll({
+    container: containerRef,
+    onChange: ({ value: { scrollYProgress } }) => {
+      if (scrollYProgress > 0.8) {
+        textApi.start({ y: '0', opacity: '1' })
+      } else {
+        textApi.start({ y: '30px', opacity: '0' })
+      }
+    },
+    default: {
+      immediate: true,
+    }
+  })
+
   return (
-    <article className={introStyles.intro} {...introScrollRestoration}>
+    <article className={introStyles.intro} ref={containerRef} {...introScrollRestoration}>
       <div className={introStyles.container}>
         <div className={introStyles.title}>
           <div className={introStyles.title_container}>
@@ -37,7 +59,7 @@ export default function Intro({ introScrollRestoration }: any) {
             <div>좀 더 넓은 시각으로 서비스를 바라봅니다.</div>
           </div>
         </div>
-        <div className={introStyles.scroll_guide}>Scroll Down</div>
+        <animated.div className={introStyles.scroll_guide} style={textStyles}>Scroll Down</animated.div>
         <div className={introStyles.bg_moving_text}></div>
       </div>
     </article>
