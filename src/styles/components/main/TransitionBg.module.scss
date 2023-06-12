@@ -1,0 +1,12 @@
+.decoration_bg {
+  position: relative;
+
+  .bg {
+    background-color: var(--transition-bg-color);
+    height: 200rem;
+    min-height: 100rem;
+    position: absolute;
+    top: -50px;
+    width: 100%;
+  }
+}

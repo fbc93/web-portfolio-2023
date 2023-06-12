@@ -1,5 +1,6 @@
 :root {
   --z-index-header: 9999;
+  --z-index-scroll-icon: 1;
   --top-value-header: 4rem;
 
   --desktop-header-height: 127px;
@@ -25,4 +26,5 @@
   --primary-text: #2137FF;
   --logo-primary-color: #2137FF;
   --logo-sub-color: #4C7DFD;
+  --transition-bg-color: rgba(174, 198, 255, 0.15);
 }

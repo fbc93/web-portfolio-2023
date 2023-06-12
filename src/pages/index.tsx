@@ -3,6 +3,7 @@ import { HeadFC, PageProps, useScrollRestoration } from "gatsby"
 import { SEO } from "../components/seo"
 import Layout from "../components/layout"
 import Intro from "../components/main/intro"
+import TransitionBg from "../components/main/transitionBg"
 
 const IndexPage: React.FC<PageProps> = () => {
   const introScrollRestoration = useScrollRestoration(`intro-article`)
@@ -10,6 +11,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <Intro introScrollRestoration={introScrollRestoration} />
+      <TransitionBg />
     </Layout>
   )
 }
