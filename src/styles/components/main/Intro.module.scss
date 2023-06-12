@@ -65,7 +65,7 @@
 
             .st1 {
               fill: none;
-              stroke: var(--logo-sub-color);
+              stroke: var(--logo-primary-color);
               stroke-width: 1;
 
               stroke-miterlimit:0;  
@@ -73,8 +73,6 @@
               stroke-dashoffset: 0;
               animation: dash 5s linear forwards;
             }
-
-            .st2 {}
           }
         }
       }

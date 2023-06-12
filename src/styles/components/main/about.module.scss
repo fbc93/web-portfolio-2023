@@ -1,0 +1,40 @@
+.about {
+  min-width: var(--mobile-min-width);
+  width:100%;
+  padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 10vh);
+  padding-bottom: 10vh;
+  padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+  padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+  text-align: center;
+
+  .visual {
+
+    .profile {
+      & > div {
+        & > img {
+
+        }
+      }
+    }
+
+    .animation_text {
+      .screen_out {}
+      .first_text {}
+      .second_text {}
+    }
+  }
+
+  .content {
+    .content_title {
+
+    }
+
+    .content_desc {
+
+    }
+
+    .download_link {
+      & > a {}
+    }
+  }
+}

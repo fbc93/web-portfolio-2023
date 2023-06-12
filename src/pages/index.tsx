@@ -4,14 +4,17 @@ import { SEO } from "../components/seo"
 import Layout from "../components/layout"
 import Intro from "../components/main/intro"
 import TransitionBg from "../components/main/transitionBg"
+import About from "../components/main/about"
 
 const IndexPage: React.FC<PageProps> = () => {
-  const introScrollRestoration = useScrollRestoration(`intro-article`)
+  const introScrollRestoration = useScrollRestoration(`intro-article`);
+  const aboutScrollRestoration = useScrollRestoration(`about-article`);
 
   return (
     <Layout>
       <Intro introScrollRestoration={introScrollRestoration} />
       <TransitionBg />
+      <About aboutScrollRestoration={aboutScrollRestoration} />
     </Layout>
   )
 }
