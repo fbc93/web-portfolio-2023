@@ -2,9 +2,9 @@ import React from "react";
 import * as introStyles from "../../styles/components/main/Intro.module.scss";
 import Logo from "./logo";
 
-export default function Intro() {
+export default function Intro({ introScrollRestoration }: any) {
   return (
-    <article className={introStyles.intro}>
+    <article className={introStyles.intro} {...introScrollRestoration}>
       <div className={introStyles.container}>
         <div className={introStyles.title}>
           <div className={introStyles.title_container}>
@@ -31,9 +31,9 @@ export default function Intro() {
             </div>
           </div>
           <div className={introStyles.last}>
-            <div>새로운 것을 배우고 도전하는 과정을 사랑합니다.</div>
+            <div>미지의 영역을 탐구하고 새로운 것을 배우고 도전하는 과정을 사랑(💙)합니다.</div>
             <div>백엔드 / 프론트 / 디자인 / 마케팅 등</div>
-            <div>서로의 의견을 제시하고 맞춰갔던 지난 경험을 기반으로</div>
+            <div>서로의 의견을 제시하고 맞춰갔던 지난 경험들에 기반하여</div>
             <div>좀 더 넓은 시각으로 서비스를 바라봅니다.</div>
           </div>
         </div>

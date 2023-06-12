@@ -1,13 +1,15 @@
 import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import { HeadFC, PageProps, useScrollRestoration } from "gatsby"
 import { SEO } from "../components/seo"
 import Layout from "../components/layout"
 import Intro from "../components/main/intro"
 
 const IndexPage: React.FC<PageProps> = () => {
+  const introScrollRestoration = useScrollRestoration(`intro-article`)
+
   return (
     <Layout>
-      <Intro />
+      <Intro introScrollRestoration={introScrollRestoration} />
     </Layout>
   )
 }
