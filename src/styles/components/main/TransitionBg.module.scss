@@ -3,9 +3,11 @@
 
   .bg {
     background-color: var(--transition-bg-color);
-    height: 100vh;
-    min-height: 100rem;
+    height: calc(200rem - 30vh);
+    min-height: 135rem;
     position: absolute;
+    top:0;
+    left:0;
     width: 100%;
   }
 }
