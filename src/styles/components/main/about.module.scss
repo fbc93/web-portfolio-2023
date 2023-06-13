@@ -5,7 +5,6 @@
     min-width: var(--mobile-min-width);
     min-height: 100rem;
     width:100%;
-    padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 10vh);
     padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
     padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
     text-align: center;
@@ -22,7 +21,7 @@
         grid-template-columns: 1fr 1fr;
         justify-content: center;
         align-items: start;
-        width: 50rem;
+        width: 45rem;
         aspect-ratio: 1/1;
         border-radius: 35px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -49,7 +48,7 @@
   
       .animation_text {
         position: absolute;
-        bottom: 88%;
+        bottom: 85%;
         right: -95px;
         text-align: left;
 

@@ -2,63 +2,197 @@ import { Link } from "gatsby";
 import React, { useRef } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { FiDownload } from "react-icons/fi";
-import { useTrail, useScroll, animated } from '@react-spring/web';
+import { useTrail, useSprings, useScroll, animated, config } from '@react-spring/web';
 import * as aboutStyles from "../../styles/components/main/About.module.scss";
 import Logo from "./logo";
 
 export default function About({ aboutScrollRestoration }: any) {
 
+  //Profile
+  const [profile, profileApi] = useSprings(1,
+    () => ({
+      from: {
+        opacity: 0,
+        transform: 'translateY(50px)'
+      },
+      to: {
+        opacity: 1,
+        transform: 'translateY(0px)'
+      },
+      config: config.stiff,
+    }), []);
+
+  const [subTitle, subTitleApi] = useSprings(1,
+    () => ({
+      from: {
+        opacity: 0,
+        transform: 'translateY(50px)'
+      },
+      to: {
+        opacity: 1,
+        transform: 'translateY(0px)'
+      },
+      config: config.stiff,
+    }), []);
+
   const words = ['G', 'R', 'A', 'Y', 'Z', 'O', 'N', 'E'];
   const containerRef = React.useRef<HTMLDivElement>(null!);
   const isFlipped = useRef(false);
 
-  const [trail, trailApi] = useTrail(words.length, () => ({
-    opacity: 0,
-    rotateX: 0,
-  }));
+  const [trail, trailApi] = useTrail(
+    words.length,
+    () => ({
+      opacity: 0,
+      rotateX: 0,
+      config: config.stiff,
+    }), []);
+
+
+  //Content
+  const [contentTitle, contentTitleApi] = useSprings(1,
+    () => ({
+      from: {
+        opacity: 0,
+        transform: 'translateY(50px)'
+      },
+      to: {
+        opacity: 1,
+        transform: 'translateY(0px)'
+      },
+      config: config.molasses,
+    }), []);
+
+  const [contentDesc, contentDescApi] = useSprings(1,
+    () => ({
+      from: {
+        opacity: 0,
+        transform: 'translateY(50px)'
+      },
+      to: {
+        opacity: 1,
+        transform: 'translateY(0px)'
+      },
+      config: config.molasses,
+    }), []);
+
+  const [downloadBtn, downloadBtnApi] = useSprings(1,
+    () => ({
+      from: {
+        opacity: 0,
+        transform: 'translateX(-50px)'
+      },
+      to: {
+        opacity: 1,
+        transform: 'translateX(0px)'
+      },
+      config: config.molasses,
+    }), []);
+
 
   const { scrollYProgress } = useScroll({
     container: containerRef,
     onChange: ({ value: { scrollYProgress } }) => {
+
       if (scrollYProgress < 0.4) {
+        //Profile
+        subTitleApi.start({
+          opacity: 0,
+          transform: 'translateY(50px)',
+        });
+
         trailApi.start({
           opacity: 0,
           rotateX: 0,
         });
 
+        profileApi.start({
+          opacity: 0,
+          transform: 'translateY(50px)',
+        });
+
         isFlipped.current = false;
 
+        //Content
+        contentTitleApi.start({
+          opacity: 0,
+          transform: 'translateY(50px)',
+        });
+
+        contentDescApi.start({
+          opacity: 0,
+          transform: 'translateY(50px)',
+        });
+
+        downloadBtnApi.start({
+          opacity: 0,
+          transform: 'translateX(-50px)',
+        });
+
+
       } else if (scrollYProgress >= 0.4) {
+        subTitleApi.start({
+          opacity: 1,
+          transform: 'translateY(0px)',
+          delay: 300,
+        });
+
+        profileApi.start({
+          opacity: 1,
+          transform: 'translateY(0px)',
+          delay: 800,
+        });
+
         trailApi.start({
           opacity: 1,
           rotateX: 180,
+          delay: 1000,
         });
 
         isFlipped.current = true;
+
+        //Content
+        contentTitleApi.start({
+          opacity: 1,
+          transform: 'translateY(0px)',
+          delay: 1800,
+        });
+
+        contentDescApi.start({
+          opacity: 1,
+          transform: 'translateY(0px)',
+          delay: 2600,
+        });
+
+        downloadBtnApi.start({
+          opacity: 1,
+          transform: 'translateX(0px)',
+          delay: 3600,
+        });
       }
-    },
-    default: {
-      immediate: true,
     }
   });
-
 
   return (
     <article className={aboutStyles.about} ref={containerRef} {...aboutScrollRestoration}>
       <div className={aboutStyles.container}>
         <div className={aboutStyles.visual}>
-          <div className={aboutStyles.profile}>
-            <div className={aboutStyles.left}>
-              <StaticImage height={600} src="../../../static/images/profile_01.jpg" alt="profile image" />
-            </div>
-            <div className={aboutStyles.right}>
-              <StaticImage height={600} src="../../../static/images/profile_03.jpg" alt="profile image" />
-              <StaticImage height={600} src="../../../static/images/profile_02.jpg" alt="profile image" />
-            </div>
-          </div>
+          {profile.map((props, idx) => (
+            <animated.div className={aboutStyles.profile} style={props} key={idx}>
+              <div className={aboutStyles.left}>
+                <StaticImage height={600} src="../../../static/images/profile_01.jpg" alt="profile image" />
+              </div>
+              <div className={aboutStyles.right}>
+                <StaticImage height={600} src="../../../static/images/profile_03.jpg" alt="profile image" />
+                <StaticImage height={600} src="../../../static/images/profile_02.jpg" alt="profile image" />
+              </div>
+            </animated.div>
+          ))}
           <div className={aboutStyles.animation_text}>
             <div className={aboutStyles.screen_out}>About Younhwa</div>
-            <div className={aboutStyles.first_text}>Learning From </div>
+
+            {subTitle.map((props, idx) => (
+              <animated.div className={aboutStyles.first_text} style={props} key={idx}>Learning From </animated.div>
+            ))}
 
             <animated.div className={aboutStyles.second_text}>
               {trail.map(({ rotateX, opacity }, idx) => (
@@ -85,26 +219,35 @@ export default function About({ aboutScrollRestoration }: any) {
           </div>
         </div>
         <div className={aboutStyles.content}>
-          <div className={aboutStyles.content_title}>
-            <span>ABOUT_</span>
-            <Logo />
-          </div>
-          <div className={aboutStyles.content_desc}>
-            <p>
-              안녕하세요, UI 개발 & 웹 퍼블리싱 / 신입 FE 개발 지원자 이윤화입니다. <br />
-              좋은 서비스라는 하나의 목표를 위하는 마음으로 경계없이 배우고 일합니다. <br />
-              백엔드 / 프론트 / 디자이너 / 기획자(PM)와 한 팀으로 협업하며 퍼블리싱 1인 담당자로서 근무했습니다.
-            </p>
-            <p>개발자와 UI 디자이너 사이에서 작업에 대한 커뮤니케이션을 지속적으로 진행하여 두 가지 직무에 대한 높은 이해도를 기반으로 프로젝트를 진행했으며, 자사 서비스 웹앱 / 어드민 / 카페24 쇼핑몰 퍼블리싱 경험을 바탕으로 반응형 스타일과 크로스 플랫폼 / 브라우징 작업에 능숙합니다.</p>
-            <p>FE 개발자와 협업하여 앱 내에 외부 광고를 붙이거나 화면에 대한 케이스 분석을 함께 진행했으며, 인하우스 개발자뿐만 아니라 외주 업체 개발자들과의 2주 단위 스프린트 프로젝트를 통해 백로그를 작성하여 작업을 기록하고 공유하는 워크플로우를 경험했습니다.</p>
-            <p>회사 업무 외에 개인적인 자기계발을 통해 React와 Typescript를 배웠으며, 프레임워크 컴포넌트 단위의 마크업과 스타일 작업을 할 수 있습니다.</p>
-          </div>
-          <div className={aboutStyles.download_link}>
-            <Link to="/">
-              <FiDownload />
-              <span>자기소개 자세히 보기</span>
-            </Link>
-          </div>
+
+          {contentTitle.map((props, idx) => (
+            <animated.div className={aboutStyles.content_title} style={props} key={idx}>
+              <span>ABOUT_</span>
+              <Logo />
+            </animated.div>
+          ))}
+
+          {contentDesc.map((props, idx) => (
+            <animated.div className={aboutStyles.content_desc} style={props} key={idx}>
+              <p>
+                안녕하세요, UI 개발 & 웹 퍼블리싱 / 신입 FE 개발 지원자 이윤화입니다. <br />
+                좋은 서비스라는 하나의 목표를 위하는 마음으로 경계없이 배우고 일합니다. <br />
+                백엔드 / 프론트 / 디자이너 / 기획자(PM)와 한 팀으로 협업하며 퍼블리싱 1인 담당자로서 근무했습니다.
+              </p>
+              <p>개발자와 UI 디자이너 사이에서 작업에 대한 커뮤니케이션을 지속적으로 진행하여 두 가지 직무에 대한 높은 이해도를 기반으로 프로젝트를 진행했으며, 자사 서비스 웹앱 / 어드민 / 카페24 쇼핑몰 퍼블리싱 경험을 바탕으로 반응형 스타일과 크로스 플랫폼 / 브라우징 작업에 능숙합니다.</p>
+              <p>FE 개발자와 협업하여 앱 내에 외부 광고를 붙이거나 화면에 대한 케이스 분석을 함께 진행했으며, 인하우스 개발자뿐만 아니라 외주 업체 개발자들과의 2주 단위 스프린트 프로젝트를 통해 백로그를 작성하여 작업을 기록하고 공유하는 워크플로우를 경험했습니다.</p>
+              <p>회사 업무 외에 개인적인 자기계발을 통해 React와 Typescript를 배웠으며, 프레임워크 컴포넌트 단위의 마크업과 스타일 작업을 할 수 있습니다.</p>
+            </animated.div>
+          ))}
+
+          {downloadBtn.map((props, idx) => (
+            <animated.div className={aboutStyles.download_link} style={props} key={idx}>
+              <Link to="/">
+                <FiDownload />
+                <span>자기소개 자세히 보기</span>
+              </Link>
+            </animated.div>
+          ))}
         </div>
       </div>
     </article>
