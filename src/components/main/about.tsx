@@ -1,13 +1,50 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { useRef } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { FiDownload } from "react-icons/fi";
+import { useTrail, useScroll, animated } from '@react-spring/web';
 import * as aboutStyles from "../../styles/components/main/About.module.scss";
 import Logo from "./logo";
 
 export default function About({ aboutScrollRestoration }: any) {
+
+  const words = ['G', 'R', 'A', 'Y', 'Z', 'O', 'N', 'E'];
+  const containerRef = React.useRef<HTMLDivElement>(null!);
+  const isFlipped = useRef(false);
+
+  const [trail, trailApi] = useTrail(words.length, () => ({
+    opacity: 0,
+    rotateX: 0,
+  }));
+
+  const { scrollYProgress } = useScroll({
+    container: containerRef,
+    onChange: ({ value: { scrollYProgress } }) => {
+      if (scrollYProgress < 0.4) {
+        trailApi.start({
+          opacity: 0,
+          rotateX: 0,
+        });
+
+        isFlipped.current = false;
+
+      } else if (scrollYProgress >= 0.4) {
+        trailApi.start({
+          opacity: 1,
+          rotateX: 180,
+        });
+
+        isFlipped.current = true;
+      }
+    },
+    default: {
+      immediate: true,
+    }
+  });
+
+
   return (
-    <article className={aboutStyles.about} {...aboutScrollRestoration}>
+    <article className={aboutStyles.about} ref={containerRef} {...aboutScrollRestoration}>
       <div className={aboutStyles.container}>
         <div className={aboutStyles.visual}>
           <div className={aboutStyles.profile}>
@@ -21,8 +58,30 @@ export default function About({ aboutScrollRestoration }: any) {
           </div>
           <div className={aboutStyles.animation_text}>
             <div className={aboutStyles.screen_out}>About Younhwa</div>
-            <div className={aboutStyles.first_text}>I'm Learn From </div>
-            <div className={aboutStyles.second_text}>GRAY ZONE</div>
+            <div className={aboutStyles.first_text}>Learning From </div>
+
+            <animated.div className={aboutStyles.second_text}>
+              {trail.map(({ rotateX, opacity }, idx) => (
+                <div key={idx}>
+                  <animated.span
+                    key={words[idx]}
+                    style={{
+                      opacity: opacity.to(val => val),
+                      transform: rotateX.to(val => `perspective(600px) rotateX(${val}deg)`),
+                      transformStyle: 'preserve-3d',
+                    }}
+                  >{'?'}</animated.span>
+                  <animated.span
+                    style={{
+                      opacity: opacity.to(val => val),
+                      transform: rotateX.to(val => `perspective(600px) rotateX(${180 - val}deg)`),
+                      transformStyle: 'preserve-3d',
+                    }}
+                  >{words[idx]}</animated.span>
+                </div>
+              ))}
+            </animated.div>
+
           </div>
         </div>
         <div className={aboutStyles.content}>
@@ -37,7 +96,7 @@ export default function About({ aboutScrollRestoration }: any) {
               백엔드 / 프론트 / 디자이너 / 기획자(PM)와 한 팀으로 협업하며 퍼블리싱 1인 담당자로서 근무했습니다.
             </p>
             <p>개발자와 UI 디자이너 사이에서 작업에 대한 커뮤니케이션을 지속적으로 진행하여 두 가지 직무에 대한 높은 이해도를 기반으로 프로젝트를 진행했으며, 자사 서비스 웹앱 / 어드민 / 카페24 쇼핑몰 퍼블리싱 경험을 바탕으로 반응형 스타일과 크로스 플랫폼 / 브라우징 작업에 능숙합니다.</p>
-            <p>FE 개발자와 협업하여 앱 내에 외부 광고를 붙이거나 화면에 대한 케이스 분석을 함께 진행했으며, 하우스 개발자뿐만 아니라 외주 업체 개발자들과의 2주 단위 스프린트 프로젝트를 통해 백로그를 작성하여 작업을 기록하고 공유하는 워크플로우를 경험했습니다.</p>
+            <p>FE 개발자와 협업하여 앱 내에 외부 광고를 붙이거나 화면에 대한 케이스 분석을 함께 진행했으며, 인하우스 개발자뿐만 아니라 외주 업체 개발자들과의 2주 단위 스프린트 프로젝트를 통해 백로그를 작성하여 작업을 기록하고 공유하는 워크플로우를 경험했습니다.</p>
             <p>회사 업무 외에 개인적인 자기계발을 통해 React와 Typescript를 배웠으며, 프레임워크 컴포넌트 단위의 마크업과 스타일 작업을 할 수 있습니다.</p>
           </div>
           <div className={aboutStyles.download_link}>
