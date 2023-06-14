@@ -31,7 +31,7 @@
   
       .animation_text {
         position: absolute;
-        bottom: 85%;
+        bottom: 87%;
         right: -50px;
         text-align: left;
 
@@ -47,8 +47,9 @@
         .first_text {
           font-size:4rem;
           color: var(--gray-text);
-          margin-bottom: 1rem;
+          margin-bottom: 1.5rem;
           font-weight:700;
+          font-family: monospace;
         }
 
         .second_text {
@@ -158,6 +159,7 @@
 
         .profile {
           width: 50rem;
+          margin-top: 9rem;
         }
       }
 
@@ -221,7 +223,7 @@
 
         .profile {
           width: 100%;
-          margin: 13rem auto 0;
+          margin: 8rem auto 0;
         }
 
         .animation_text {
@@ -268,7 +270,7 @@
 
         .profile {
           width: 100%;
-          margin: 10rem auto 0;
+          margin: 7rem auto 0;
         }
 
         .animation_text {
