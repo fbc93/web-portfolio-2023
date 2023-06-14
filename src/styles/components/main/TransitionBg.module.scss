@@ -3,19 +3,19 @@
 
   .bg {
     background-color: var(--transition-bg-color);
-    height: calc(67vh + 60rem);
-    min-height: fit-content;
+    min-height: 108rem;
     position: absolute;
-    top:0;
-    left:0;
+    top: 160px;
+    left: 0;
     width: 100%;
+    z-index: 1;
   }
 }
 
 @media screen and (max-width: 1300px) {
   .decoration_bg {
     .bg {
-      height: calc(100vh + 80rem);
+      
     }
   }
 }
@@ -23,7 +23,7 @@
 @media screen and (max-width: 450px) {
   .decoration_bg {
     .bg {
-      height: calc(100vh + 115rem);
+      
     }
   }
 }

@@ -15,6 +15,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Intro introScrollRestoration={introScrollRestoration} />
       <TransitionBg />
       <About aboutScrollRestoration={aboutScrollRestoration} />
+      <div>Works</div>
     </Layout>
   )
 }

@@ -1,10 +1,10 @@
 .about {  
+  background-color: var(--transition-bg-color);
   position: relative;
-  z-index: 1;
 
   .container {
     min-width: var(--mobile-min-width);
-    min-height: 60rem;
+    min-height: 108rem;
     width:100%;
     padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
     padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
@@ -12,6 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 1;
 
     .visual {
       position: relative;
@@ -152,14 +154,24 @@
 @media screen and (max-width: 1300px) {
   .about {
     .container {
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: auto;
+      row-gap: 5rem;
+      margin-top: 15rem;
+      padding-bottom: 10vh;
 
       .visual {
-        margin-bottom: 8rem;
-
         .profile {
           width: 50rem;
-          margin-top: 9rem;
+          margin: 12rem auto auto;
+        }
+
+        .animation_text {
+          width:100%;
+          position: absolute;
+          bottom: 87%;
+          left: 0;
+          text-align: left;
         }
       }
 
@@ -177,7 +189,6 @@
 
         .profile {
           width: 45rem;
-          margin-top: 10rem;
         }
 
         .animation_text {
@@ -219,7 +230,6 @@
   .about {
     .container {
       .visual {
-        margin-bottom: 5rem;
 
         .profile {
           width: 100%;
@@ -266,7 +276,6 @@
     padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 5vh);
     .container {
       .visual {
-        margin-bottom: 4rem;
 
         .profile {
           width: 100%;

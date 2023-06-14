@@ -1,6 +1,7 @@
 :root {
   --z-index-header: 9999;
-  --z-index-scroll-icon: 1;
+  --z-index-scroll-icon: 0;
+  --z-index-intro-article: 2;
   --top-value-header: 4rem;
 
   --desktop-header-height: 127px;
@@ -20,13 +21,12 @@
   --line-color-header: #000000;
   --primary-color-resume-status: #2137FF;
   --update-text-color: #333333;
-  --z-index-intro-article: 1;
   --gray-text: #333333;
   --white-text: #ffffff;
   --primary-text: #2137FF;
   --logo-primary-color: #2137FF;
   --logo-sub-color: #4C7DFD;
-  --transition-bg-color: rgba(174, 198, 255, 0.15);
+  --transition-bg-color: #e8ebf7;
   --scroll-dwn-color: #999999;
   --dark-gray-button-color: #2137FF;
   --moving-text-front-bg: #333333;
