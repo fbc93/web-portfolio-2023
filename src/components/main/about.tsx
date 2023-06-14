@@ -177,13 +177,7 @@ export default function About({ aboutScrollRestoration }: any) {
         <div className={aboutStyles.visual}>
           {profile.map((props, idx) => (
             <animated.div className={aboutStyles.profile} style={props} key={idx}>
-              <div className={aboutStyles.left}>
-                <StaticImage height={600} src="../../../static/images/profile_01.jpg" alt="profile image" />
-              </div>
-              <div className={aboutStyles.right}>
-                <StaticImage height={600} src="../../../static/images/profile_03.jpg" alt="profile image" />
-                <StaticImage height={600} src="../../../static/images/profile_02.jpg" alt="profile image" />
-              </div>
+              <StaticImage height={600} src="../../../static/images/profile_01.jpg" alt="profile image" />
             </animated.div>
           ))}
           <div className={aboutStyles.animation_text}>
@@ -233,7 +227,7 @@ export default function About({ aboutScrollRestoration }: any) {
                 백엔드 / 프론트 / 디자이너 / 기획자(PM)와 한 팀으로 협업하며 퍼블리싱 1인 담당자로서 근무했습니다. <br />
                 업무의 회색지대들을 적극적으로 인지하여 빠르게 성장하고, 다양한 직군의 동료들과 함께 작업할 수 있습니다.<br />
               </p>
-              <p>개발자와 UI 디자이너와 같이 직무가 서로 다른 작업자들 사이의 꼼꼼한 커뮤니케이션을 가장 중요하게 생각합니다. FE 개발자들과 화면 케이스 분석을 함께 진행했으며, 자사 서비스(모바일 웹앱/PC) / 어드민 / 카페24 쇼핑몰 퍼블리싱 작업을 담당했습니다.</p>
+              <p>개발자와 UI 디자이너와 같이 직무가 서로 다른 작업자들 사이의 꼼꼼한 커뮤니케이션을 가장 중요하게 생각합니다. FE 개발자들과 화면 케이스 분석을 함께 진행했으며, 자사 서비스(모바일 웹앱/PC) / 어드민 / 카페24 쇼핑몰 퍼블리싱 유지보수를 담당했습니다.</p>
               <p>인하우스 개발자뿐만 아니라 외주 업체 개발자들과의 2주 단위 스프린트 프로젝트를 통해 백로그를 작성하여 작업을 기록하고 공유하는 워크플로우를 경험했습니다.</p>
               <p>회사 업무 외에 지속적인 자기계발을 통해 React와 Typescript를 익혔으며, 프레임워크 컴포넌트 단위의 마크업과 스타일 작업을 할 수 있습니다.</p>
             </animated.div>
