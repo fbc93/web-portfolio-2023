@@ -93,43 +93,7 @@ export default function About({ aboutScrollRestoration }: any) {
     container: containerRef,
     onChange: ({ value: { scrollYProgress } }) => {
 
-      if (scrollYProgress < 0.4) {
-        //Profile
-        subTitleApi.start({
-          opacity: 0,
-          transform: 'translateY(50px)',
-        });
-
-        trailApi.start({
-          opacity: 0,
-          rotateX: 0,
-        });
-
-        profileApi.start({
-          opacity: 0,
-          transform: 'translateY(50px)',
-        });
-
-        isFlipped.current = false;
-
-        //Content
-        contentTitleApi.start({
-          opacity: 0,
-          transform: 'translateY(50px)',
-        });
-
-        contentDescApi.start({
-          opacity: 0,
-          transform: 'translateY(50px)',
-        });
-
-        downloadBtnApi.start({
-          opacity: 0,
-          transform: 'translateX(-50px)',
-        });
-
-
-      } else if (scrollYProgress >= 0.4) {
+      if (scrollYProgress >= 0.4) {
         subTitleApi.start({
           opacity: 1,
           transform: 'translateY(0px)',
@@ -167,6 +131,41 @@ export default function About({ aboutScrollRestoration }: any) {
           opacity: 1,
           transform: 'translateX(0px)',
           delay: 3600,
+        });
+
+      } else {
+        //Profile
+        subTitleApi.start({
+          opacity: 0,
+          transform: 'translateY(50px)',
+        });
+
+        trailApi.start({
+          opacity: 0,
+          rotateX: 0,
+        });
+
+        profileApi.start({
+          opacity: 0,
+          transform: 'translateY(50px)',
+        });
+
+        isFlipped.current = false;
+
+        //Content
+        contentTitleApi.start({
+          opacity: 0,
+          transform: 'translateY(50px)',
+        });
+
+        contentDescApi.start({
+          opacity: 0,
+          transform: 'translateY(50px)',
+        });
+
+        downloadBtnApi.start({
+          opacity: 0,
+          transform: 'translateX(-50px)',
         });
       }
     }
@@ -231,12 +230,12 @@ export default function About({ aboutScrollRestoration }: any) {
             <animated.div className={aboutStyles.content_desc} style={props} key={idx}>
               <p>
                 안녕하세요, UI 개발 & 웹 퍼블리싱 / 신입 FE 개발 지원자 이윤화입니다. <br />
-                좋은 서비스라는 하나의 목표를 위하는 마음으로 경계없이 배우고 일합니다. <br />
-                백엔드 / 프론트 / 디자이너 / 기획자(PM)와 한 팀으로 협업하며 퍼블리싱 1인 담당자로서 근무했습니다.
+                백엔드 / 프론트 / 디자이너 / 기획자(PM)와 한 팀으로 협업하며 퍼블리싱 1인 담당자로서 근무했습니다. <br />
+                업무의 회색지대들을 적극적으로 인지하여 빠르게 성장하고, 다양한 직군의 동료들과 함께 작업할 수 있습니다.<br />
               </p>
-              <p>개발자와 UI 디자이너 사이에서 작업에 대한 커뮤니케이션을 지속적으로 진행하여 두 가지 직무에 대한 높은 이해도를 기반으로 프로젝트를 진행했으며, 자사 서비스 웹앱 / 어드민 / 카페24 쇼핑몰 퍼블리싱 경험을 바탕으로 반응형 스타일과 크로스 플랫폼 / 브라우징 작업에 능숙합니다.</p>
-              <p>FE 개발자와 협업하여 앱 내에 외부 광고를 붙이거나 화면에 대한 케이스 분석을 함께 진행했으며, 인하우스 개발자뿐만 아니라 외주 업체 개발자들과의 2주 단위 스프린트 프로젝트를 통해 백로그를 작성하여 작업을 기록하고 공유하는 워크플로우를 경험했습니다.</p>
-              <p>회사 업무 외에 개인적인 자기계발을 통해 React와 Typescript를 배웠으며, 프레임워크 컴포넌트 단위의 마크업과 스타일 작업을 할 수 있습니다.</p>
+              <p>개발자와 UI 디자이너와 같이 직무가 서로 다른 작업자들 사이의 꼼꼼한 커뮤니케이션을 가장 중요하게 생각합니다. FE 개발자들과 화면 케이스 분석을 함께 진행했으며, 자사 서비스(모바일 웹앱/PC) / 어드민 / 카페24 쇼핑몰 퍼블리싱 작업을 담당했습니다.</p>
+              <p>인하우스 개발자뿐만 아니라 외주 업체 개발자들과의 2주 단위 스프린트 프로젝트를 통해 백로그를 작성하여 작업을 기록하고 공유하는 워크플로우를 경험했습니다.</p>
+              <p>회사 업무 외에 지속적인 자기계발을 통해 React와 Typescript를 익혔으며, 프레임워크 컴포넌트 단위의 마크업과 스타일 작업을 할 수 있습니다.</p>
             </animated.div>
           ))}
 

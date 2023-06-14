@@ -110,10 +110,10 @@ export default function Intro({ introScrollRestoration }: any) {
             <div className={introStyles.first}>
               <div>
                 <strong className={introStyles.primary_color}>서비스</strong>
-                <span>라는 단 하나의 목표를 추구하는</span>
+                <span>라는 단 하나의 목표를 추구합니다.</span>
               </div>
               <div>
-                <strong className={introStyles.gray_color}>회색 영역 이 없는</strong>
+                <strong className={introStyles.gray_color}>회색지대가 없는</strong>
                 {flowUpText.map((props, idx) => (
                   <animated.span style={props} key={idx}>개발자 이윤화입니다.</animated.span>
                 ))}

@@ -3,11 +3,27 @@
 
   .bg {
     background-color: var(--transition-bg-color);
-    height: calc(200rem - 30vh);
-    min-height: 135rem;
+    height: calc(67vh + 60rem);
+    min-height: fit-content;
     position: absolute;
     top:0;
     left:0;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .decoration_bg {
+    .bg {
+      height: calc(100vh + 80rem);
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .decoration_bg {
+    .bg {
+      height: calc(100vh + 115rem);
+    }
   }
 }

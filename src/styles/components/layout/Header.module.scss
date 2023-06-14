@@ -1,6 +1,7 @@
 .header {
   position: fixed;
-  top: var(--top-value-header);
+  padding-top: var(--top-value-header);
+  padding-bottom: 1.5rem;
   left:0;
   width:100%;
   min-width: 360px;
