@@ -53,13 +53,11 @@ export default function About({ aboutScrollRestoration }: any) {
     () => ({
       from: {
         opacity: 0,
-        transform: 'translateY(50px)'
       },
       to: {
         opacity: 1,
-        transform: 'translateY(0px)'
       },
-      config: config.molasses,
+      config: config.stiff,
     }), []);
 
   const [contentDesc, contentDescApi] = useSprings(1,
@@ -117,7 +115,6 @@ export default function About({ aboutScrollRestoration }: any) {
         //Content
         contentTitleApi.start({
           opacity: 1,
-          transform: 'translateY(0px)',
           delay: 1800,
         });
 
@@ -155,7 +152,6 @@ export default function About({ aboutScrollRestoration }: any) {
         //Content
         contentTitleApi.start({
           opacity: 0,
-          transform: 'translateY(50px)',
         });
 
         contentDescApi.start({
