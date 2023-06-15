@@ -193,7 +193,6 @@
       top:0;
       user-select: none;
       pointer-events: none;
-      z-index: var(--z-index-intro-article);
       background-image: url(../../../../static/bg/flow_text_bg.svg);
       background-position: 100% calc(var(--desktop-header-height) + var(--top-value-header) + 5vh);
       background-repeat: repeat-x;

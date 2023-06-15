@@ -5,17 +5,19 @@ import Layout from "../components/layout"
 import Intro from "../components/main/intro"
 import TransitionBg from "../components/main/transitionBg"
 import About from "../components/main/about"
+import Works from "../components/main/works"
 
 const IndexPage: React.FC<PageProps> = () => {
   const introScrollRestoration = useScrollRestoration(`intro-article`);
   const aboutScrollRestoration = useScrollRestoration(`about-article`);
+  const worksScrollRestoration = useScrollRestoration(`works-article`);
 
   return (
     <Layout>
       <Intro introScrollRestoration={introScrollRestoration} />
       <TransitionBg />
       <About aboutScrollRestoration={aboutScrollRestoration} />
-      <div>Works</div>
+      <Works worksScrollRestoration={worksScrollRestoration} />
     </Layout>
   )
 }

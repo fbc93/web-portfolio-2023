@@ -151,6 +151,19 @@ input:focus {
   outline:none;
 }
 
+.screen_out {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  color: transparent;
+  padding: 0;
+  border: 0;
+  line-height: 0;
+  margin: -1px;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 360px) {
   html {
     overflow-x: hidden;

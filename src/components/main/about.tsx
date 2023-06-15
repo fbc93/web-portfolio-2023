@@ -177,7 +177,7 @@ export default function About({ aboutScrollRestoration }: any) {
             </animated.div>
           ))}
           <div className={aboutStyles.animation_text}>
-            <div className={aboutStyles.screen_out}>About Younhwa</div>
+            <strong className="screen_out">About Younhwa</strong>
 
             {subTitle.map((props, idx) => (
               <animated.div className={aboutStyles.first_text} style={props} key={idx}>Learning From </animated.div>
@@ -211,7 +211,7 @@ export default function About({ aboutScrollRestoration }: any) {
 
           {contentTitle.map((props, idx) => (
             <animated.div className={aboutStyles.content_title} style={props} key={idx}>
-              <span>ABOUT_</span>
+              <span>ABOUT.</span>
               <Logo />
             </animated.div>
           ))}
