@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import * as worksStyles from "../../styles/components/main/Works.module.scss";
 import { useTrail, useSprings, useScroll, animated, config } from '@react-spring/web';
+import WorkItem from "./workItem";
 
 export default function Works({ worksScrollRestoration }: any) {
 
@@ -44,7 +45,7 @@ export default function Works({ worksScrollRestoration }: any) {
     container: containerRef,
     onChange: ({ value: { scrollYProgress } }) => {
 
-      if (scrollYProgress >= 0.8) {
+      if (scrollYProgress >= 0.6) {
         titleApi.start({
           opacity: 1,
           transform: 'translateY(0px)',
@@ -71,7 +72,7 @@ export default function Works({ worksScrollRestoration }: any) {
         });
       }
 
-      //fixedBg 위로 scroll해서 사라짐.
+      //fixedBg 위로 scroll하면 intro에서 안보이도록 중간에서 사라짐.
       if (scrollYProgress < 0.6) {
         fixedBgApi.start({
           display: 'none'
@@ -84,14 +85,14 @@ export default function Works({ worksScrollRestoration }: any) {
     <article className={worksStyles.works} {...worksScrollRestoration}>
 
       <div className={worksStyles.works_list}>
-        <strong className="screen_out">Work Experiences</strong>
-        <div>Work Item_01</div>
+        <strong className="screen_out">Work Experience</strong>
+        <WorkItem />
       </div>
 
       {fixedBg.map((props, idx) => (
         <animated.div className={worksStyles.fixed_bg} style={props} key={idx}>
           {title.map((props, idx) => (
-            <animated.strong className={worksStyles.main_title} style={props} key={idx}>Work Experiences</animated.strong>
+            <animated.strong className={worksStyles.main_title} style={props} key={idx}>🏃‍♀️ Work Experience</animated.strong>
           ))}
 
           <strong className={worksStyles.sub_title}>

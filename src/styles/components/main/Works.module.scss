@@ -1,5 +1,5 @@
 .works {
-  padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 14vh);
+  padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 25vh);
   padding-bottom: 10vh;
   padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
   padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
@@ -7,12 +7,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; //auto
+  height: auto;
 
   .works_list {
-    max-width:120rem;
-    width: 100%;
-    position: relative;
+    
   }
 
   .fixed_bg {
