@@ -22,10 +22,10 @@
   .card {
     aspect-ratio: 3/2;
     background-color: #eceaeaf5;
-    border:1px solid #999999;
+    border:1px solid #cccccc;
     position: absolute;
     bottom: 2rem;
-    left: -2rem;
+    left: -1.5rem;
     width: 100%;
     border-radius: 1rem;
     box-sizing: border-box;
@@ -44,6 +44,7 @@
         display: inline-block;
         width: 100%;
         text-align: left;
+        margin-bottom: 1rem;
       }
     }
   }
@@ -51,12 +52,18 @@
 
 @media screen and (max-width: 1300px){
   .work_item {
+    width: calc(25% - 50px);
+    display: inline-flex;
+    margin: 0 25px 0 25px;
+    
+  }
+}
+
+@media screen and (max-width: 944px){
+  .work_item {
     width: calc(50% - 70px);
     display: inline-flex;
-    margin: 0 50px 10vh 20px;
-    
-    .preview {}
-    .card {}
+    margin: 0 35px 10vh 35px;
   }
 }
 

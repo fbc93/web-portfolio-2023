@@ -9,6 +9,7 @@
   height: auto;
   color:#333333;
   margin-left: 2rem;
+  border:1px solid #cccccc;
 
   .company_info {
     display: grid;
@@ -23,6 +24,7 @@
       border-radius: 2rem;
       overflow: hidden;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border: 1px solid #cccccc;
     }
 
     .container {

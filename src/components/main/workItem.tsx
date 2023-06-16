@@ -21,7 +21,7 @@ export default function WorkItem({ projectName, imageName }: IWorkItemProps) {
       <div className={workItemStyles.card}>
         <Link to="/">
           <span className={workItemStyles.title}># {projectName}</span>
-          <span></span>
+          <span className={workItemStyles.category}>WEB APP</span>
         </Link>
       </div>
     </div>

@@ -3,6 +3,7 @@ import * as worksStyles from "../../styles/components/main/Works.module.scss";
 import { useTrail, useSprings, useScroll, animated, config } from '@react-spring/web';
 import WorkItem from "./workItem";
 import Company from "./company";
+import WideWorkItem from "./wideWorkItem";
 
 export default function Works({ worksScrollRestoration }: any) {
 
@@ -99,6 +100,7 @@ export default function Works({ worksScrollRestoration }: any) {
             <WorkItem projectName={workItem} imageName={`thecamp_0${idx + 1}`} key={idx} />
           ))}
         </div>
+        <WideWorkItem />
       </div>
 
       {fixedBg.map((props, idx) => (
