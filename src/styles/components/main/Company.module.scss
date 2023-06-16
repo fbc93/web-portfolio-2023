@@ -1,0 +1,120 @@
+.company {
+  width: calc(100% - 2rem);
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  justify-content: center;
+  backdrop-filter: blur(1.2px);
+  background-color: hsla(0,0%,92%,.502);
+  border-radius: 2rem;
+  height: auto;
+  color:#333333;
+  margin-left: 2rem;
+
+  .company_info {
+    display: grid;
+    grid-template-rows: 280px 45px 15px;
+    justify-content: flex-start;
+    align-items: start;
+    position: relative;
+    top: -2.5rem;
+    left: -2rem;
+
+    .logo {
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .title {
+      display: flex;
+      max-width: 38rem;
+      width: 100%;
+      gap: 1rem;
+
+      .text {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 90%;
+      }
+
+      .duration {
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+    }
+
+    .my_work {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: grey;
+    }
+  }
+
+  .company_desc {
+    box-sizing: border-box;
+    padding: 4rem 4rem 4rem 2rem;
+
+    .name {
+      font-size:2rem;
+      color: grey;
+      margin-bottom: 1rem;
+    }
+
+    .content {
+      font-size:1.6rem;
+      letter-spacing: -1px;
+      color: #333333;
+      line-height: 160%;
+      margin-bottom: 2rem;
+    }
+
+    .service_tech {
+      margin-bottom: 2rem;
+
+      .title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: -1.5px;
+        color: grey;
+      }
+  
+      .tech_desc {
+        font-size: 1.6rem;
+        letter-spacing: -1px;
+        color: #333333;
+        line-height: 160%;
+      }
+    }
+
+    .my_tech {
+      margin-bottom: 2rem;
+
+      .title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: -1.5px;
+        color: grey;
+      }
+    }
+
+    .dev_env {
+      margin-bottom: 2rem;
+
+      .title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: -1.5px;
+        color: grey;
+      }
+    }
+
+    .co_work_tool {
+      .title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: -1.5px;
+        color: grey;
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import * as worksStyles from "../../styles/components/main/Works.module.scss";
 import { useTrail, useSprings, useScroll, animated, config } from '@react-spring/web';
 import WorkItem from "./workItem";
+import Company from "./company";
 
 export default function Works({ worksScrollRestoration }: any) {
 
@@ -84,9 +85,12 @@ export default function Works({ worksScrollRestoration }: any) {
   return (
     <article className={worksStyles.works} {...worksScrollRestoration}>
 
+
+
       <div className={worksStyles.works_list}>
         <strong className="screen_out">Work Experience</strong>
-        <WorkItem />
+        <Company />
+
       </div>
 
       {fixedBg.map((props, idx) => (
