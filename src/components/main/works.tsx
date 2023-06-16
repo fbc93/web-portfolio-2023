@@ -96,7 +96,7 @@ export default function Works({ worksScrollRestoration }: any) {
       {fixedBg.map((props, idx) => (
         <animated.div className={worksStyles.fixed_bg} style={props} key={idx}>
           {title.map((props, idx) => (
-            <animated.strong className={worksStyles.main_title} style={props} key={idx}>🏃‍♀️ Work Experience</animated.strong>
+            <animated.strong className={worksStyles.main_title} style={props} key={idx}>Work Experience</animated.strong>
           ))}
 
           <strong className={worksStyles.sub_title}>

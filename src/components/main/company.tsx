@@ -10,11 +10,13 @@ export default function Company() {
         <div className={companyStyles.logo}>
           <StaticImage width={500} src="../../../static/images/thecamp_logo.jpg" alt="THE CAMP" />
         </div>
-        <div className={companyStyles.title}>
-          <div className={companyStyles.text}>더 캠프</div>
-          <div className={companyStyles.duration}>21/09 - 23/02</div>
+        <div className={companyStyles.container}>
+          <div className={companyStyles.title}>
+            <div className={companyStyles.text}>더 캠프</div>
+            <div className={companyStyles.duration}>21/09 - 23/02</div>
+          </div>
+          <div className={companyStyles.my_work}>UI 개발 / 퍼블리싱</div>
         </div>
-        <div className={companyStyles.my_work}>UI 개발 / 퍼블리싱</div>
       </div>
 
       <div className={companyStyles.company_desc}>
@@ -33,15 +35,15 @@ export default function Company() {
         </div>
 
         <div className={companyStyles.my_tech}>
-          <div className={companyStyles.title}>담당 기술 스택</div>
+          <div className={companyStyles.title}>퍼블리싱 기술 스택</div>
           <div>
-            HTML5 / CSS3 / Javascript / jQuery / JSP / JSTL
+            HTML5 / CSS3 / Javascript(ES6) / jQuery / JSP / JSTL
           </div>
         </div>
 
         <div className={companyStyles.dev_env}>
           <div className={companyStyles.title}>개발 환경</div>
-          <div>intelliJ / VSCode / Mac</div>
+          <div>Git Fork (Git GUI) / intelliJ / VSCode / Mac</div>
         </div>
 
         <div className={companyStyles.co_work_tool}>
