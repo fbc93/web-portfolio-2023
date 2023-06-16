@@ -48,3 +48,29 @@
     }
   }
 }
+
+@media screen and (max-width: 1300px){
+  .work_item {
+    width: calc(50% - 70px);
+    display: inline-flex;
+    margin: 0 50px 10vh 20px;
+    
+    .preview {}
+    .card {}
+  }
+}
+
+@media screen and (max-width: 768px){
+  .work_item {
+    width: calc(50% - 40px);
+    display: inline-flex;
+    margin: 0 20px 10vh 20px;
+  }
+}
+
+@media screen and (max-width: 530px){
+  .work_item {
+    width: 70%;
+    margin-bottom: 10vh;
+  }
+}

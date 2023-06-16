@@ -124,8 +124,13 @@
   }
 }
 
+@media screen and (max-width: 1300px){
+  .company {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 768px){
-  
   .company {
     grid-template-columns: auto;
     width: 100%;
@@ -147,11 +152,9 @@
       padding: 2rem 3rem 5rem 3rem;
     }
   }
-  
 }
 
 @media screen and (max-width: 530px) {
-
   .company {
     .company_info {
       grid-template-columns: 150px 1fr;

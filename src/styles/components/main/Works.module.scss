@@ -82,8 +82,15 @@
 
 @media screen and (max-width: 1300px){
   .works {
-    .works_list {
-      width: 100%;
+    .works_container {
+      grid-template-columns: 1fr;
+
+      .works_list {
+        width: 100%;
+        display: inline-block;
+        column-gap: 0;
+        
+      }
     }
 
     .fixed_bg {
@@ -107,6 +114,16 @@
             display: none;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .works {
+    .works_container {
+      .works_list {
+        text-align: center;
       }
     }
   }
