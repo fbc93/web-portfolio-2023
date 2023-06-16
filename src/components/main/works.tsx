@@ -82,15 +82,23 @@ export default function Works({ worksScrollRestoration }: any) {
     }
   });
 
+  const workItems = [
+    "보고싶은 군인 카드 개선",
+    "추천 스타군인",
+    "오퍼월 포인트 획득",
+    "기타 화면 개선"
+  ];
+
   return (
     <article className={worksStyles.works} {...worksScrollRestoration}>
-
-
-
-      <div className={worksStyles.works_list}>
+      <div className={worksStyles.works_container}>
         <strong className="screen_out">Work Experience</strong>
         <Company />
-
+        <div className={worksStyles.works_list}>
+          {workItems.map((workItem, idx) => (
+            <WorkItem projectName={workItem} imageName={`thecamp_0${idx + 1}`} key={idx} />
+          ))}
+        </div>
       </div>
 
       {fixedBg.map((props, idx) => (

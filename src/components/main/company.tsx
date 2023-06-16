@@ -20,7 +20,7 @@ export default function Company() {
       </div>
 
       <div className={companyStyles.company_desc}>
-        <div className={companyStyles.name}>@인에이블다온소프트</div>
+        <div className={companyStyles.name}>@인에이블다온소프트 / 더 캠프</div>
         <div className={companyStyles.content}>
           더캠프는 대한민국 육군을 위한 위문편지 서비스입니다. <br />
           보고싶은 군인을 등록하여 신병 훈련기간 동안 인터넷 위문편지를 주고 받을 수 있습니다. <br />
