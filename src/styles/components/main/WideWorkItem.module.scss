@@ -22,6 +22,7 @@
       border: 1px solid #cccccc;
       aspect-ratio: 1/1.95;
       overflow: hidden;
+      overflow: hidden;
       border-radius: 2rem;
       background-color: #999999;
     }
@@ -51,7 +52,18 @@
     }
 
     .category {
-      border:1px solid red;
+      
+    }
+  }
+}
+
+
+@media screen and (max-width: 1300px) {
+  .wide_work_item {
+    width: calc(100% - 1.5rem);
+    margin: auto 0px auto auto;
+    .preview {
+      
     }
   }
 }
@@ -62,7 +74,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      gap: 5rem;
+      gap: 3rem;
 
       .mobile { 
         width: fit-content;
@@ -76,16 +88,25 @@
 
     .card {
       width: 50%;
-      left: 2rem;
     }
   }
 }
 
 @media screen and (max-width: 530px){
   .wide_work_item {
-    
+
+    .preview {
+      gap: 2rem;
+      
+      .mobile {
+        & > div {
+          width: 100%;
+        }
+      }
+    }
+
     .card {
-      width: 60%;
+      width: 80%;
     }
   }
 }

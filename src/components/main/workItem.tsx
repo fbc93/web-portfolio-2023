@@ -5,10 +5,19 @@ import * as workItemStyles from "../../styles/components/main/WorkItem.module.sc
 
 interface IWorkItemProps {
   projectName: string;
+  category: string;
+  keywords: string[];
+  content: string;
   imageName: string;
 }
 
-export default function WorkItem({ projectName, imageName }: IWorkItemProps) {
+export default function WorkItem({
+  projectName,
+  category,
+  keywords,
+  content,
+  imageName
+}: IWorkItemProps) {
   return (
     <div className={workItemStyles.work_item}>
       <div className={workItemStyles.preview}>
@@ -20,8 +29,14 @@ export default function WorkItem({ projectName, imageName }: IWorkItemProps) {
       </div>
       <div className={workItemStyles.card}>
         <Link to="/">
-          <span className={workItemStyles.title}># {projectName}</span>
-          <span className={workItemStyles.category}>WEB APP</span>
+          <span className={workItemStyles.project_name}># {projectName}</span>
+          <span className={workItemStyles.category}>{category}</span>
+          <ul className={workItemStyles.tech_keyword}>
+            {keywords.map((keyword, idx) => (
+              <li key={idx}>{keyword}</li>
+            ))}
+          </ul>
+          <span>{content}</span>
         </Link>
       </div>
     </div>

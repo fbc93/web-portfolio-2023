@@ -24,7 +24,7 @@ export default function Company() {
         <div className={companyStyles.content}>
           더캠프는 대한민국 육군을 위한 위문편지 서비스입니다. <br />
           보고싶은 군인을 등록하여 신병 훈련기간 동안 인터넷 위문편지를 주고 받을 수 있습니다. <br />
-          제대 D-DAY 계산기 / 식단 / 훈련소와 사단별 공지사항 및 훈련소 사진과 토크 게시판을 제공합니다.<br />
+          전역일 계산기(D-Day) / 식단 / 훈련소와 사단별 공지사항 및 훈련소 사진과 토크 게시판을 제공합니다.<br />
         </div>
 
         <div className={companyStyles.service_tech}>
@@ -37,13 +37,13 @@ export default function Company() {
         <div className={companyStyles.my_tech}>
           <div className={companyStyles.title}>퍼블리싱 기술 스택</div>
           <div>
-            HTML5 / CSS3 / Javascript(ES6) / jQuery / JSP / JSTL
+            HTML5(JSP) / CSS3 / Javascript(ES6) / JSTL / jQuery
           </div>
         </div>
 
         <div className={companyStyles.dev_env}>
           <div className={companyStyles.title}>개발 환경</div>
-          <div>Git Fork (Git GUI) / intelliJ / VSCode / Mac</div>
+          <div>intelliJ / VSCode / Git Fork (Git GUI) / Mac</div>
         </div>
 
         <div className={companyStyles.co_work_tool}>

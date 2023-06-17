@@ -84,10 +84,47 @@ export default function Works({ worksScrollRestoration }: any) {
   });
 
   const workItems = [
-    "보고싶은 군인 카드 개선",
-    "추천 스타군인",
-    "오퍼월 포인트 획득",
-    "기타 화면 개선"
+    {
+      projectName: "보고싶은군인 카드 개선",
+      category: "리뉴얼",
+      keywords: [
+        "Markup",
+        "Style",
+        "케이스분석",
+        "Cross-Platform"
+      ],
+      content: "기존의 레거시 코드를 걷어내고 카드의 전체적인 UI 디자인을 변경하는 프로젝트입니다.",
+    },
+    {
+      projectName: "추천 스타군인",
+      category: "신규개발",
+      keywords: [
+        "Markup",
+        "Style",
+        "Cross-Platform"
+      ],
+      content: "디자이너의 부재로 UI 디자인을 제안하고 기획자와 협의하여 개발까지 함께 진행했습니다.",
+    },
+    {
+      projectName: "오퍼월 포인트 획득",
+      category: "신규개발",
+      keywords: [
+        "Markup",
+        "Style",
+        "Cross-Platform"
+      ],
+      content: "외주 개발자들과 함께 협업한 프로젝트입니다. UI 디자인을 제안하여 적용했습니다.",
+    },
+    {
+      projectName: "UI 개선",
+      category: "유지보수",
+      keywords: [
+        "Markup",
+        "Style",
+        "Cross-Platform"
+      ],
+      content: "기존 기능을 유지하고 신규 디자인에 맞춰 UI를 변경합니다."
+    }
   ];
 
   return (
@@ -97,7 +134,14 @@ export default function Works({ worksScrollRestoration }: any) {
         <Company />
         <div className={worksStyles.works_list}>
           {workItems.map((workItem, idx) => (
-            <WorkItem projectName={workItem} imageName={`thecamp_0${idx + 1}`} key={idx} />
+            <WorkItem
+              projectName={workItem.projectName}
+              category={workItem.category}
+              keywords={workItem.keywords}
+              content={workItem.content}
+              imageName={`thecamp_0${idx + 1}`}
+              key={idx}
+            />
           ))}
         </div>
         <WideWorkItem />

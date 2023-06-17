@@ -16,8 +16,12 @@ export default function WideWorkItem() {
       </div>
       <div className={wideWorkItemStyles.card}>
         <Link to="/">
-          <span className={wideWorkItemStyles.title}># 캠프몰</span>
-          <span className={wideWorkItemStyles.category}>CAFE24</span>
+          <span className={wideWorkItemStyles.project_name}># 캠프몰</span>
+          <span className={wideWorkItemStyles.category}>이커머스, 유지보수</span>
+          <span className={wideWorkItemStyles.tech_keyword}>CAFE24, 반응형</span>
+          <span className={wideWorkItemStyles.content}>
+            회사에서 구매한 베이직한 디자인 스킨을 받아 커머스팀의 요구사항을 지속적으로 반영한 작업물입니다.
+          </span>
         </Link>
       </div>
     </div>
