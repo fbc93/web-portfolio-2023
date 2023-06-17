@@ -18,10 +18,16 @@ export default function WideWorkItem({
     <div className={wideWorkItemStyles.wide_work_item}>
       <div className={wideWorkItemStyles.preview}>
         <div className={wideWorkItemStyles.mobile}>
-          <StaticImage src="../../../static/images/thecamp_06.png" alt="preview image" />
+          <div className={wideWorkItemStyles.image}>
+            <StaticImage src="../../../static/images/thecamp_06.png" alt="preview image" />
+          </div>
+          <div className={wideWorkItemStyles.shadow}></div>
         </div>
         <div className={wideWorkItemStyles.desktop}>
-          <StaticImage src="../../../static/images/thecamp_05.png" alt="preview image" />
+          <div className={wideWorkItemStyles.image}>
+            <StaticImage src="../../../static/images/thecamp_05.png" alt="preview image" />
+          </div>
+          <div className={wideWorkItemStyles.shadow}></div>
         </div>
       </div>
       <div className={wideWorkItemStyles.card}>
