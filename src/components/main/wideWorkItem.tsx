@@ -6,14 +6,12 @@ import { Link } from "gatsby";
 interface IWideWorkItem {
   projectName: string;
   category: string[];
-  keywords: string[];
   content: string;
 }
 
 export default function WideWorkItem({
   projectName,
   category,
-  keywords,
   content
 }: IWideWorkItem) {
   return (
@@ -32,11 +30,6 @@ export default function WideWorkItem({
           <ul className={wideWorkItemStyles.category}>
             {category.map((item, idx) => (
               <li key={idx}>{item}</li>
-            ))}
-          </ul>
-          <ul className={wideWorkItemStyles.tech_keyword}>
-            {keywords.map((keyword, idx) => (
-              <li key={idx}>{keyword}</li>
             ))}
           </ul>
           <span className={wideWorkItemStyles.content}>{content}</span>

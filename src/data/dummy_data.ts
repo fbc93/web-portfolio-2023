@@ -31,7 +31,7 @@ export const workItemsData = [
     content: "외주 개발자들과 함께 협업한 프로젝트입니다. UI 디자인을 제안하여 적용했습니다.",
   },
   {
-    projectName: "UI 개선",
+    projectName: "기타 UI 개선",
     category: "유지보수",
     keywords: [
       "MARK UP",
@@ -43,14 +43,10 @@ export const workItemsData = [
 ];
 
 export const wideWorkItemData = {
-  projectName: "캠프몰",
+  projectName: "캠프몰 (CAFE24)",
   category: [
-    "이커머스",
-    "유지보수"
-  ],
-  keywords: [
-    "CAFE24",
-    "반응형",
+    "유지보수",
+    "추가 개발"
   ],
   content: "회사에서 구매한 베이직한 디자인 스킨을 받아 커머스팀의 요구사항을 지속적으로 반영한 작업물입니다.",
 };

@@ -36,23 +36,55 @@
     bottom: 2rem;
     left: -1.5rem;
     width: 30%;
+    height: 19rem;
     border-radius: 1rem;
     box-sizing: border-box;
     padding: 2rem;
+    overflow: hidden;
 
-    .title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #333333;
-      letter-spacing: -1px;
-      display: inline-block;
+    & > a {
       width: 100%;
-      text-align: left;
-      margin-bottom: 1rem;
-    }
+      height: 100%;
+      position: relative;
+      display: grid;
+      grid-template-rows: 1.8rem 2.8rem;
+      align-items: flex-start;
+      row-gap: 1rem;
 
-    .category {
+      .project_name {
+        display: inline-block;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #333333;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        letter-spacing: -1px;
+      }
       
+      .category {
+        font-size: 1.5rem;
+        display: flex;
+        gap: 0.5rem;
+
+       & > li {
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5rem 1.2rem;
+        background-color: #63a4b5;
+        color: #ffffff;
+        font-weight: 500;
+        border-radius: 3px;
+        line-height: 120%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+       }
+      }
+
+      .content {
+        font-size:1.6rem;
+        text-align: left;
+        line-height: 150%;
+      }
     }
   }
 }
@@ -87,7 +119,8 @@
     }
 
     .card {
-      width: 50%;
+      width: 30rem;
+      height: 20rem;
     }
   }
 }
@@ -106,7 +139,8 @@
     }
 
     .card {
-      width: 80%;
+      width: 30rem;
+      height: 20rem;
     }
   }
 }
