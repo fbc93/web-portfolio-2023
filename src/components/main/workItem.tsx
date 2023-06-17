@@ -29,7 +29,7 @@ export default function WorkItem({
       </div>
       <div className={workItemStyles.card}>
         <Link to="/">
-          <span className={workItemStyles.project_name}># {projectName}</span>
+          <span className={workItemStyles.project_name}>{`# ${projectName}`}</span>
           <span className={workItemStyles.category}>{category}</span>
           <ul className={workItemStyles.tech_keyword}>
             {keywords.map((keyword, idx) => (
