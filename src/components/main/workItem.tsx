@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
+import { FiLink } from "react-icons/fi";
 import { StaticImage } from "gatsby-plugin-image";
 import * as workItemStyles from "../../styles/components/main/WorkItem.module.scss";
 
@@ -27,7 +28,10 @@ export default function WorkItem({
       </div>
       <div className={workItemStyles.card}>
         <Link to="/">
-          <span className={workItemStyles.project_name}>{`# ${projectName}`}</span>
+          <span className={workItemStyles.project_name}>
+            <FiLink />
+            {projectName}
+          </span>
           <span className={workItemStyles.category}>{category}</span>
           <span className={workItemStyles.content}>{content}</span>
         </Link>

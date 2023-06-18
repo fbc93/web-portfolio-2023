@@ -1,5 +1,6 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { FiLink } from "react-icons/fi";
 import * as wideWorkItemStyles from "../../styles/components/main/wideWorkItem.module.scss";
 import { Link } from "gatsby";
 
@@ -32,7 +33,10 @@ export default function WideWorkItem({
       </div>
       <div className={wideWorkItemStyles.card}>
         <Link to="/">
-          <span className={wideWorkItemStyles.project_name}>{`# ${projectName}`}</span>
+          <span className={wideWorkItemStyles.project_name}>
+            <FiLink />
+            {projectName}
+          </span>
           <ul className={wideWorkItemStyles.category}>
             {category.map((item, idx) => (
               <li key={idx}>{item}</li>
