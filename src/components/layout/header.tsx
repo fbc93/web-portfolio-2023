@@ -9,11 +9,11 @@ export default function Header() {
     () => ({
       from: {
         opacity: 1,
-        height: 'auto',
+        display: "block",
       },
       to: {
         opacity: 0,
-        height: 0,
+        display: "none",
       },
     }), []);
 
@@ -23,20 +23,20 @@ export default function Header() {
       if (scrollYProgress >= 0.3) {
         subHeaderApi.start({
           opacity: 0,
-          height: 0 as any,
+          display: "none",
         });
 
       } else {
         subHeaderApi.start({
           opacity: 1,
-          height: 'auto' as any,
+          display: "block",
         });
       }
     },
   });
 
   return (
-    <header className={headerStyles.header}>
+    <header className={headerStyles.header} ref={containerRef}>
       <div className={headerStyles.container}>
         <div className={headerStyles.line + " " + headerStyles.bold}></div>
         <div className={headerStyles.content}>

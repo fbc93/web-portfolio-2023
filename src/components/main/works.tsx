@@ -84,8 +84,6 @@ export default function Works({ worksScrollRestoration }: any) {
     }
   });
 
-
-
   return (
     <article className={worksStyles.works} {...worksScrollRestoration}>
       <div className={worksStyles.works_container}>
@@ -96,9 +94,9 @@ export default function Works({ worksScrollRestoration }: any) {
             <WorkItem
               projectName={workItem.projectName}
               category={workItem.category}
-              keywords={workItem.keywords}
               content={workItem.content}
               imageName={`thecamp_0${idx + 1}`}
+              path={`/work/thecamp/${workItem.path}`}
               key={idx}
             />
           ))}
@@ -106,8 +104,8 @@ export default function Works({ worksScrollRestoration }: any) {
         <WideWorkItem
           projectName={wideWorkItemData.projectName}
           category={wideWorkItemData.category}
-          keywords={wideWorkItemData.keywords}
           content={wideWorkItemData.content}
+          path={`/work/thecamp/${wideWorkItemData.path}`}
         />
       </div>
 

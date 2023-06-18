@@ -8,12 +8,14 @@ interface IWideWorkItem {
   projectName: string;
   category: string[];
   content: string;
+  path: string;
 }
 
 export default function WideWorkItem({
   projectName,
   category,
-  content
+  content,
+  path,
 }: IWideWorkItem) {
   return (
     <div className={wideWorkItemStyles.wide_work_item}>
@@ -32,7 +34,7 @@ export default function WideWorkItem({
         </div>
       </div>
       <div className={wideWorkItemStyles.card}>
-        <Link to="/">
+        <Link to={path}>
           <span className={wideWorkItemStyles.project_name}>
             <FiLink />
             {projectName}

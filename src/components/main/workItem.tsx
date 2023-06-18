@@ -9,13 +9,15 @@ interface IWorkItemProps {
   category: string;
   content: string;
   imageName: string;
+  path: string,
 }
 
 export default function WorkItem({
   projectName,
   category,
   content,
-  imageName
+  imageName,
+  path
 }: IWorkItemProps) {
   return (
     <div className={workItemStyles.work_item}>
@@ -27,7 +29,7 @@ export default function WorkItem({
         <div className={workItemStyles.preview_shadow}></div>
       </div>
       <div className={workItemStyles.card}>
-        <Link to="/">
+        <Link to={path}>
           <span className={workItemStyles.project_name}>
             <FiLink />
             {projectName}
