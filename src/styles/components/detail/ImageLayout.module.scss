@@ -1,23 +1,24 @@
 .image_layout_container {
   max-width: 120rem;
   margin: auto auto 10vh auto;
-  padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
-  padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
   display: grid;
-  grid-template-columns: 50% calc(50% - 2rem);
+  align-items: center;
+  grid-template-columns: calc(50% - 2.5rem) calc(50% - 2.5rem);
   justify-content: center;
-  gap: 2rem;
+  gap: 5rem;
 
   .image_layout {
     display: grid;
-    grid-template-columns: 40% calc(60% - 2rem);
+    grid-template-columns: calc(40% - 1rem) calc(60% - 1rem);
     justify-content: center;
+    align-items: center;
     gap: 2rem;
   
     .preview {
       border:1px solid #cccccc;
       border-radius: 2rem;
       overflow: hidden;
+      aspect-ratio: 268/579;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
   
@@ -31,13 +32,65 @@
       & > div {
         border:1px solid #cccccc;
         height: 100%;
+        width: 100%;
         padding: 2rem;
         border-radius: 1rem;
+        aspect-ratio: 304/222;
+      }
+
+      .bottom {
+        line-height: 160%;
       }
     }
   }
 }
 
 @media screen and (max-width: 1300px) {
-  
+  .image_layout_container {
+    gap: 3rem;
+    padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+    padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+    grid-template-columns: calc(50% - 1.5rem) calc(50% - 1.5rem);
+  }
+}
+
+@media screen and (max-width: 944px) {
+  .image_layout_container {
+    width: 80%;
+    grid-template-columns: calc(50% - 1.5rem) calc(50% - 1.5rem);
+
+    .image_layout {
+      grid-template-columns: none;
+      gap: 5vh;
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .image_layout_container {
+    width: 100%;
+    grid-template-columns: calc(50% - 1.5rem) calc(50% - 1.5rem);
+
+    .image_layout {
+      grid-template-columns: none;
+      gap: 5vh;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 540px) {
+  .image_layout_container {
+    grid-template-columns: none;
+    grid-template-rows: 50% 50%;
+    
+    .image_layout { 
+      .preview {
+        width: 50%;
+        margin: auto;
+      }
+    }
+  }
 }
