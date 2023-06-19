@@ -1,5 +1,7 @@
 .work_detail {
   padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 5vh);
+  position: relative;
+  background-color: #ffffff;
 
   .container {
     max-width: 120rem;

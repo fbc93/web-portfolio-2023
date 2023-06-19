@@ -1,0 +1,12 @@
+.footer {
+  align-items: center;
+  background-color: var(--logo-sub-color);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  min-height: 46rem;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}

@@ -6,6 +6,7 @@ import GoBackBtn from "./goBackBtn";
 import { StaticImage } from "gatsby-plugin-image";
 import ImageLayout from "./imageLayout";
 import ImagesLayout from "./imagesLayout";
+import NextWorkList from "./nextWorkList";
 
 export default function WorkDetail() {
   return (
@@ -20,6 +21,7 @@ export default function WorkDetail() {
       <ImageLayout />
       <ImageLayout />
       <ImagesLayout />
+      <NextWorkList />
     </article>
   )
 }

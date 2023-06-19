@@ -6,11 +6,13 @@ import Card from "../../../components/detail/card";
 import GoBackBtn from "../../../components/detail/goBackBtn";
 import WorkDetail from "../../../components/detail/workDetail";
 import * as workDetailStyles from "../../../styles/components/detail/WorkDetail.module.scss";
+import Footer from "../../../components/layout/footer";
 
 export default function MissSoldierCardRenewal() {
   return (
     <Layout>
       <WorkDetail />
+      <Footer />
     </Layout>
   )
 }
