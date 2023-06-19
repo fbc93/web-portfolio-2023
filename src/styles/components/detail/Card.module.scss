@@ -1,0 +1,61 @@
+.card {
+  width: 100%;
+
+  .sub_title {
+    display: block;
+    margin-bottom: 2rem;
+    font-size:2rem;
+    color:#a5a5a5;
+  }
+
+  .title {
+    font-size:5rem;
+    display: block;
+    margin-bottom: 5rem;
+  }
+
+  .category {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+
+    & > span {
+      display: inline-block;
+      color: #ffffff;
+      font-weight: 500;
+      background-color: #63a4b5;
+      padding: 1rem 1.5rem;
+      margin-right: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+
+  .team {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    color: #a5a5a5;
+
+    .bar {
+      font-weight: 100;
+      display: inline-block;
+      margin: 0 1rem;
+    }
+
+    .my_job {
+      color:#333333;
+      font-weight: 600;
+    }
+  }
+
+  .desc {
+    & > p {
+      color: #4e4e4e;
+      font-size:2rem;
+      line-height: 160%;
+      &:first-child {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

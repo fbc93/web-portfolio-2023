@@ -151,6 +151,12 @@ input:focus {
   outline:none;
 }
 
+button {
+  border:none;
+  background-color: transparent;
+  padding:0;
+}
+
 .screen_out {
   position: absolute;
   width: 1px;

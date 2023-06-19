@@ -1,14 +1,16 @@
-import { HeadFC, Link } from "gatsby";
+import { HeadFC, Link, navigate } from "gatsby";
 import React from "react";
 import Layout from "../../../components/layout";
 import { SEO } from "../../../components/seo";
+import Card from "../../../components/detail/card";
+import GoBackBtn from "../../../components/detail/goBackBtn";
+import WorkDetail from "../../../components/detail/workDetail";
+import * as workDetailStyles from "../../../styles/components/detail/WorkDetail.module.scss";
 
 export default function MissSoldierCardRenewal() {
   return (
     <Layout>
-      <article style={{ height: 100 + "vh", paddingTop: 20 + "vh" }}>
-        <Link to="/">뒤로</Link>
-      </article>
+      <WorkDetail />
     </Layout>
   )
 }
