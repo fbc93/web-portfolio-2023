@@ -5,6 +5,7 @@ interface ILayoutProps {
 }
 
 export default function Layout({ children }: ILayoutProps) {
+
   return (
     <div>
       <Header />

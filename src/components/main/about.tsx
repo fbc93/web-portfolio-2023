@@ -6,7 +6,7 @@ import { useTrail, useSprings, useScroll, animated, config } from '@react-spring
 import * as aboutStyles from "../../styles/components/main/About.module.scss";
 import Logo from "./logo";
 
-export default function About({ aboutScrollRestoration }: any) {
+export default function About() {
 
   //Profile
   const [profile, profileApi] = useSprings(1,
@@ -168,7 +168,7 @@ export default function About({ aboutScrollRestoration }: any) {
   });
 
   return (
-    <article className={aboutStyles.about} ref={containerRef} {...aboutScrollRestoration}>
+    <article className={aboutStyles.about} ref={containerRef}>
       <div className={aboutStyles.container}>
         <div className={aboutStyles.visual}>
           {profile.map((props, idx) => (

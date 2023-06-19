@@ -1,3 +1,21 @@
 .work_detail {
-  border:1px solid red;
+
+  .container {
+    max-width: var(--desktop-max-width);
+    padding-top: calc(var(--desktop-header-height) + 2vh);
+    padding-bottom: 10vh;
+    padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+    padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+    
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+
+    .goBackLink {
+      display: inline-block;
+      
+    }
+  }
 }

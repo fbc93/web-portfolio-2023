@@ -1,13 +1,14 @@
-import { HeadFC } from "gatsby";
+import { HeadFC, Link } from "gatsby";
 import React from "react";
 import Layout from "../../../components/layout";
 import { SEO } from "../../../components/seo";
-import WorkDetail from "../../../components/work/workDetail";
 
 export default function MissSoldierCardRenewal() {
   return (
     <Layout>
-      <WorkDetail />
+      <article style={{ height: 100 + "vh", paddingTop: 20 + "vh" }}>
+        <Link to="/">뒤로</Link>
+      </article>
     </Layout>
   )
 }

@@ -5,7 +5,7 @@ import { useScroll, animated, useSprings, config } from '@react-spring/web';
 import { FiChevronDown } from "react-icons/fi";
 
 
-export default function Intro({ introScrollRestoration }: any) {
+export default function Intro() {
 
   const { scrollYProgress } = useScroll({
     default: {
@@ -86,7 +86,7 @@ export default function Intro({ introScrollRestoration }: any) {
           return value;
         })
       }}
-      {...introScrollRestoration}>
+    >
       <div className={introStyles.container}>
 
         {title.map((props, idx) => (

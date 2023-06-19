@@ -6,7 +6,7 @@ import Company from "./company";
 import WideWorkItem from "./wideWorkItem";
 import { workItemsData, wideWorkItemData } from "../../data/dummy_data";
 
-export default function Works({ worksScrollRestoration }: any) {
+export default function Works() {
 
   const words = ['2', '1', '/', '0', '9', '~', '2', '3', '/', '0', '2', '_', 'T', 'H', 'E', 'C', 'A', 'M', 'P'];
   const containerRef = React.useRef<HTMLDivElement>(null!);
@@ -85,7 +85,7 @@ export default function Works({ worksScrollRestoration }: any) {
   });
 
   return (
-    <article className={worksStyles.works} {...worksScrollRestoration}>
+    <article className={worksStyles.works}>
       <div className={worksStyles.works_container}>
         <strong className="screen_out">Work Experience</strong>
         <Company />
