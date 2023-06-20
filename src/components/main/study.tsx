@@ -16,7 +16,7 @@ export default function Study() {
               <strong className={studyStyles.sub}>STUDY.</strong>
               <strong className={studyStyles.main}>
                 <span className="screen_out">overcome my gray zone</span>
-                <div className={studyStyles.text}>Overcoming My</div>
+                <div className={studyStyles.text}>Overcoming</div>
                 <div className={studyStyles.animation_text}>
                   {words.map((word, idx) => (
                     <div key={idx}>

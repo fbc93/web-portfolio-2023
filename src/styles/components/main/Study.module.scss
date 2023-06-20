@@ -70,7 +70,7 @@
                   backface-visibility: hidden;
                   background-color: #e8ebf7;
                   width: 5rem;
-                  text-align: center;
+                  text-align: left;
                 }
               }
             }
@@ -82,7 +82,7 @@
             margin: 9rem 0 3.6rem;
             padding-right:10rem;
             line-height: 180%;
-            font-size: 2rem;
+            font-size: 1.8rem;
             letter-spacing: -1px;
           }
         }
@@ -140,7 +140,7 @@
 
             .thumbnail {
               border:1px solid #cccccc;
-              border-radius: 2rem;
+              border-radius: 1rem;
               flex-shrink: 0;
               height: auto;
               overflow: hidden;
@@ -205,5 +205,197 @@
     will-change: transform;
     z-index: -999;
     transform: translateX(-60%);
+  }
+
+  .bg_direction_y {
+    display: none;
+    height: 100vh;
+    position: absolute;
+    // background-color: #dde2f5;
+    user-select: none;
+    visibility: hidden;
+    width: 100%;
+    will-change: transform;
+    z-index: -999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width:1300px) {
+  .study {
+    .container {
+      flex-direction: column;
+
+      .info {
+        width: 100%;
+        position: relative;
+        padding-top: calc(var(--desktop-header-height) + 10rem);
+        padding-bottom: calc(var(--desktop-header-height) + 10rem);
+        padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+        padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+        min-height: auto;
+        height: 100%;
+
+        .info_container {
+          max-width: 80rem;
+          width: 100%;
+          align-self: center;
+          flex-direction: column;
+        }
+      }
+
+      .content {
+        overflow-x: hidden;
+        width: 100%;
+        padding:10vh 0;
+
+        .content_container {
+          max-width: 90rem;
+          width: 100%;
+          margin:auto;
+        }
+      }
+    }
+
+    .bg_direction_x {
+      display: none;
+    }
+
+    .bg_direction_y {
+      display: block;
+      visibility: visible;
+      position: fixed;
+    }
+  }
+}
+
+@media screen and (max-width:768px) {
+  .study {
+    .container {
+      .info {
+        .info_container {
+          max-width: 80%;
+
+          .info_title {
+            .main {
+              .text {}
+              .animation_text {
+                & > div {
+                  width: 4rem;
+
+                  & > span {
+                    font-size: 4rem;
+                  }
+                }
+              }
+            }
+          }
+
+          .info_content {
+            width: 100%;
+
+            & > p {
+              padding-right:0;
+              margin: 5rem 0 3.6rem;
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+
+      .content {
+        .content_container {
+          width: 100%;
+
+         .content_item {
+          max-width: 80%;
+          margin: auto;
+
+           & > a {
+            flex-direction: column;
+            justify-content: center;
+
+            .thumbnail {
+              width: 100%;
+            }
+           }
+         }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:530px) {
+  .study {
+    .container {
+
+      .info {
+        .info_container {
+          max-width: 100%;
+          width: 100%;
+
+          .info_title {
+            .main {
+              .text {
+                font-size: 2.5rem;
+              }
+            }
+          }
+        }
+      }
+
+      .content {
+        .content_container {
+         .content_item {
+           max-width: 100%;
+           width: 100%;
+
+           .text {
+            font-size: 2.5rem;
+           }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .study {
+    .container {
+      .info {
+        .info_container {
+          width: 90%;
+          .info_title {
+            .main {
+              .text {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+              }
+
+              .animation_text {
+                & > div {
+                  width: 3.5rem;
+                  height: 3.5rem;
+
+                  & > span {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .content {
+
+      }
+    }
   }
 }

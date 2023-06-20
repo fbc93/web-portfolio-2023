@@ -8,6 +8,7 @@ import About from "../components/main/about"
 import Works from "../components/main/works"
 import Study from "../components/main/study"
 import Footer from "../components/layout/footer"
+import Contact from "../components/main/contact"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -17,7 +18,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <About />
       <Works />
       <Study />
-
+      <Contact />
     </Layout>
   )
 }
