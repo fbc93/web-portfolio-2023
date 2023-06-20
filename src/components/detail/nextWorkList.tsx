@@ -12,10 +12,7 @@ export default function NextWorkList() {
         <li><Link to="/">오퍼월 포인트 획득</Link></li>
         <li><Link to="/">기타 UI 개선</Link></li>
       </ul>
-      <Link to="/">
-        <span></span>
-        <span>Go BACK</span>
-      </Link>
+      <GoBackBtn />
     </div>
   )
 }

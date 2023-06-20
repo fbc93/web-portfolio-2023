@@ -3,6 +3,10 @@
   position: relative;
   background-color: #ffffff;
 
+  & > button {
+    margin: auto auto 8vh auto;
+  }
+
   .container {
     max-width: 120rem;
     margin: auto auto 10vh auto;
