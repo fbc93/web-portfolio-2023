@@ -180,7 +180,7 @@ export default function About() {
             <strong className="screen_out">About Younhwa</strong>
 
             {subTitle.map((props, idx) => (
-              <animated.div className={aboutStyles.first_text} style={props} key={idx}>✍️ Learning From </animated.div>
+              <animated.div className={aboutStyles.first_text} style={props} key={idx}>Learning From </animated.div>
             ))}
 
             <animated.div className={aboutStyles.second_text}>

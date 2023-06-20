@@ -5,8 +5,56 @@
   display: flex;
   justify-content: center;
   left: 0;
-  min-height: 46rem;
+  min-height: 50rem;
   position: fixed;
   width: 100%;
   z-index: -1;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .sub_title {
+      font-size: 2.5rem;
+      letter-spacing: -0.5px;
+      text-align: center;
+      margin-bottom: 3vh;
+    }
+
+    .animation_title {
+      display: flex;
+      text-align: center;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      & > div {
+        font-size:8rem;
+        font-weight: 500;
+        color:#0652DD;
+        font-style: italic;
+      }
+    }
+
+    .copyright {
+      position: absolute;
+      bottom: 4rem;
+      left:0;
+      width: 100%;
+      user-select: none;
+      color: #a9a9a9;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 1.6rem;
+      gap: 1rem;
+
+      & > svg {
+        width: 10rem;
+        height: 100%;
+        filter: grayscale(1);
+      }
+    }
+  }
 }

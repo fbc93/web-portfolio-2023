@@ -11,6 +11,7 @@ export default function NextWorkList() {
         <li><Link to="/">추천 스타군인</Link></li>
         <li><Link to="/">오퍼월 포인트 획득</Link></li>
         <li><Link to="/">기타 UI 개선</Link></li>
+        <li><Link to="/">캠프몰 (CAFE24)</Link></li>
       </ul>
       <GoBackBtn />
     </div>
