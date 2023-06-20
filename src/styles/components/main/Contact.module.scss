@@ -1,4 +1,7 @@
 .contact {
+  overflow: hidden;
+  padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+  padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
   align-items: center;
   background-color: #fff;
   display: flex;
@@ -12,6 +15,8 @@
   .container {
     max-width: var(--desktop-max-width);
     width: 100rem;
+    position: relative;
+    z-index: 1;
 
     & > strong {
       font-size: 2.5rem;
@@ -130,6 +135,102 @@
         & > span {
           font-size:1.6rem;
           color: #333333;
+        }
+      }
+    }
+  }
+
+  .bg_image {
+    color: hsla(0,0%,91%,.12);
+    display: flex;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%,-50%,0);
+    z-index: 0;
+
+    & > svg {
+      height: 100%;
+      opacity: 0.05;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .contact {
+    .container {
+      width: 70rem;
+      .mail {
+        .animation_text {
+          & > div {
+            font-size: 7rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    .container {
+      width: 100%;
+      .sub_title {
+        text-align: left;
+        width: 100%;
+
+        & > span {
+          font-size: 1.8rem;
+          display: block;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .mail {
+        .animation_text {
+          width: 100%;
+          & > div {
+            font-size: 4rem;
+          }
+        }
+      }
+
+      .content {
+        grid-template-columns:none;
+        
+        .desc {
+          line-height: 150%;
+          & > p {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .contact {
+    padding-bottom: 15vh;
+    .container {
+      .mail {
+        .animation_text {
+          & > div {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    .content {
+      gap:2rem;
+    }
+
+    .footer {
+      .container {
+        .copyright {
+          flex-direction: column;
         }
       }
     }
