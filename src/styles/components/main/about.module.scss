@@ -98,8 +98,8 @@
         align-items: center;
 
         & > span {
-          font-size: 3.4rem;
-          font-weight: 700;
+          font-size: 2rem;
+          font-weight: 400;
           color: var(--gray-text);
           display: inline-block;
           line-height: 2rem;
@@ -107,7 +107,7 @@
         }
 
         & > svg {
-          width: 14rem;
+          width: 10rem;
           height: fit-content;
         }
       }

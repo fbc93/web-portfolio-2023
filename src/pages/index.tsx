@@ -6,6 +6,7 @@ import Intro from "../components/main/intro"
 import TransitionBg from "../components/main/transitionBg"
 import About from "../components/main/about"
 import Works from "../components/main/works"
+import Study from "../components/main/study"
 import Footer from "../components/layout/footer"
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -15,6 +16,8 @@ const IndexPage: React.FC<PageProps> = () => {
       <TransitionBg />
       <About />
       <Works />
+      <Study />
+
     </Layout>
   )
 }
