@@ -81,7 +81,7 @@ export default function Intro() {
 
   const { scrollYProgress } = useScroll({
     onChange: ({ value: { scrollYProgress } }) => {
-      // console.log(scrollYProgress)
+      console.log(scrollYProgress)
 
       if (scrollYProgress < 0.03) {
         mainTitleApi.start({
@@ -195,7 +195,21 @@ export default function Intro() {
           </div>
         </animated.div>
 
-        <animated.div style={{ ...movingBg }} className={introStyles.bg_moving_text}></animated.div>
+        <animated.div style={{
+          opacity: scrollYProgress.to(scrollP => {
+            let result = 1;
+
+            if (scrollP > 0.04) {
+              result = 0.5 - scrollP;
+            }
+
+            if (scrollP > 0.1) {
+              result = 0;
+            }
+
+            return result;
+          })
+        }} className={introStyles.bg_moving_text}></animated.div>
       </div>
     </article>
   )
