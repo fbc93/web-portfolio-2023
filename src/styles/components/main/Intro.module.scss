@@ -98,7 +98,7 @@
         }
 
         & > div:first-child {
-          margin-bottom: 1vh;
+          margin-bottom: 1.5vh;
         }
 
         & > div:nth-child(2){
@@ -109,7 +109,6 @@
           align-items: center;
 
           & > span:nth-child(2){
-            transform: translateY(35px);
             display: inline-block;
             overflow: hidden;
           }
@@ -132,7 +131,7 @@
           width: fit-content;
           margin: auto;
           padding: 0 10px;
-          transform: translateY(40px);
+          transform: translateY(0px);
         }
       }
     }
