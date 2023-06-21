@@ -81,7 +81,7 @@ export default function Intro() {
 
   const { scrollYProgress } = useScroll({
     onChange: ({ value: { scrollYProgress } }) => {
-      console.log(scrollYProgress)
+      //console.log(scrollYProgress)
 
       if (scrollYProgress < 0.03) {
         mainTitleApi.start({

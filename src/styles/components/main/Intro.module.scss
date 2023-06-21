@@ -1,7 +1,7 @@
 .intro {
   min-width: var(--mobile-min-width);
   width:100%;
-  padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 14vh);
+  padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 20vh);
   padding-bottom: 10vh;
   padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
   padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
