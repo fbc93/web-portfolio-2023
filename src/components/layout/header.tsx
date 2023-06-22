@@ -20,7 +20,7 @@ export default function Header() {
   const { scrollYProgress } = useScroll({
     onChange: ({ value: { scrollYProgress } }) => {
 
-      if (scrollYProgress >= 0.02) {
+      if (scrollYProgress > 0) {
         subHeaderApi.start({
           opacity: 0,
           display: "none",

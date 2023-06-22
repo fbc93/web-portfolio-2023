@@ -3,8 +3,10 @@ import { StaticImage } from "gatsby-plugin-image";
 import { FiLink } from "react-icons/fi";
 import * as wideWorkItemStyles from "../../styles/components/main/wideWorkItem.module.scss";
 import { Link } from "gatsby";
+import { useTrail, useSpring, useSprings, useScroll, animated, config } from '@react-spring/web';
 
 interface IWideWorkItem {
+  springStyle: any;
   projectName: string;
   category: string[];
   content: string;
@@ -12,13 +14,14 @@ interface IWideWorkItem {
 }
 
 export default function WideWorkItem({
+  springStyle,
   projectName,
   category,
   content,
   path,
 }: IWideWorkItem) {
   return (
-    <div className={wideWorkItemStyles.wide_work_item}>
+    <animated.div style={springStyle} className={wideWorkItemStyles.wide_work_item}>
       <div className={wideWorkItemStyles.preview}>
         <div className={wideWorkItemStyles.mobile}>
           <div className={wideWorkItemStyles.image}>
@@ -47,6 +50,6 @@ export default function WideWorkItem({
           <span className={wideWorkItemStyles.content}>{content}</span>
         </Link>
       </div>
-    </div>
+    </animated.div>
   );
 }

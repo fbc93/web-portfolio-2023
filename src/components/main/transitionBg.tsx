@@ -18,6 +18,7 @@ export default function TransitionBg() {
 
   return (
     <div className={transitionBgStyles.decoration_bg}>
+
       <animated.div
         style={{
           transform: scrollYProgress.to(scrollP => {

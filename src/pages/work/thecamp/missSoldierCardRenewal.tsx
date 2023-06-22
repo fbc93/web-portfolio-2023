@@ -9,8 +9,10 @@ import * as workDetailStyles from "../../../styles/components/detail/WorkDetail.
 import Footer from "../../../components/layout/footer";
 
 export default function MissSoldierCardRenewal() {
+  const containerRef = React.useRef<HTMLDivElement>(null!)
+
   return (
-    <Layout>
+    <Layout containerRef={containerRef}>
       <WorkDetail />
       <Footer />
     </Layout>

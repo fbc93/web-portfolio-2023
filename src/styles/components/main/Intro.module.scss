@@ -7,7 +7,8 @@
   padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
   text-align: center;
   position: relative;
-  z-index: var(--z-index-intro-article);
+  z-index: 1;
+  background-color: #ffffff;
 
   .container {
     width:100%;

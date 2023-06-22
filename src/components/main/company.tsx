@@ -1,10 +1,12 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { animated } from '@react-spring/web';
 import * as companyStyles from "../../styles/components/main/Company.module.scss";
 
-export default function Company() {
+export default function Company({ springStyle }: any) {
+
   return (
-    <div className={companyStyles.company}>
+    <animated.div style={springStyle} className={companyStyles.company}>
 
       <div className={companyStyles.company_info}>
         <div className={companyStyles.logo}>
@@ -54,6 +56,6 @@ export default function Company() {
       </div>
 
 
-    </div>
+    </animated.div>
   )
 }

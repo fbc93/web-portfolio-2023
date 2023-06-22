@@ -3,7 +3,7 @@
 
   .container {
     min-width: var(--mobile-min-width);
-    min-height: 108rem;
+    min-height: 80rem; //108rem;
     width:100%;
     padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
     padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
@@ -41,7 +41,7 @@
           color: var(--gray-text);
           margin-bottom: 1.5rem;
           font-weight:700;
-          font-family: monospace;
+          font-style: italic;
         }
 
         .second_text {
@@ -98,16 +98,16 @@
         align-items: center;
 
         & > span {
-          font-size: 2rem;
+          font-size: 3rem;
           font-weight: 400;
           color: var(--gray-text);
           display: inline-block;
-          line-height: 2rem;
+          line-height: 3rem;
           font-family: monospace;
         }
 
         & > svg {
-          width: 10rem;
+          width: 13rem;
           height: fit-content;
         }
       }

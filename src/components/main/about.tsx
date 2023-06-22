@@ -5,170 +5,28 @@ import { FiDownload } from "react-icons/fi";
 import { useTrail, useSprings, useScroll, animated, config } from '@react-spring/web';
 import * as aboutStyles from "../../styles/components/main/About.module.scss";
 import Logo from "./logo";
+interface IAboutProps {
+  profile: any[];
+  subTitle: any[];
+  trail: any[];
+  words: string[];
+  contentTitle: any[];
+  contentDesc: any[];
+  downloadBtn: any[];
+}
 
-export default function About() {
-
-  //Profile
-  const [profile, profileApi] = useSprings(1,
-    () => ({
-      from: {
-        opacity: 0,
-        transform: 'translateY(50px)'
-      },
-      to: {
-        opacity: 1,
-        transform: 'translateY(0px)'
-      },
-      config: config.stiff,
-    }), []);
-
-  const [subTitle, subTitleApi] = useSprings(1,
-    () => ({
-      from: {
-        opacity: 0,
-        transform: 'translateY(50px)'
-      },
-      to: {
-        opacity: 1,
-        transform: 'translateY(0px)'
-      },
-      config: config.stiff,
-    }), []);
-
-  const words = ['G', 'R', 'A', 'Y', 'Z', 'O', 'N', 'E'];
-  const containerRef = React.useRef<HTMLDivElement>(null!);
-  const isFlipped = useRef(false);
-
-  const [trail, trailApi] = useTrail(
-    words.length,
-    () => ({
-      opacity: 0,
-      rotateX: 0,
-      config: config.stiff,
-    }), []);
-
-
-  //Content
-  const [contentTitle, contentTitleApi] = useSprings(1,
-    () => ({
-      from: {
-        opacity: 0,
-      },
-      to: {
-        opacity: 1,
-      },
-      config: config.stiff,
-    }), []);
-
-  const [contentDesc, contentDescApi] = useSprings(1,
-    () => ({
-      from: {
-        opacity: 0,
-        transform: 'translateY(50px)'
-      },
-      to: {
-        opacity: 1,
-        transform: 'translateY(0px)'
-      },
-      config: config.molasses,
-    }), []);
-
-  const [downloadBtn, downloadBtnApi] = useSprings(1,
-    () => ({
-      from: {
-        opacity: 0,
-        transform: 'translateX(-50px)'
-      },
-      to: {
-        opacity: 1,
-        transform: 'translateX(0px)'
-      },
-      config: config.molasses,
-    }), []);
-
-
-  const { scrollYProgress } = useScroll({
-    container: containerRef,
-    onChange: ({ value: { scrollYProgress } }) => {
-
-      if (scrollYProgress >= 0.4) {
-        subTitleApi.start({
-          opacity: 1,
-          transform: 'translateY(0px)',
-          delay: 300,
-        });
-
-        profileApi.start({
-          opacity: 1,
-          transform: 'translateY(0px)',
-          delay: 800,
-        });
-
-        trailApi.start({
-          opacity: 1,
-          rotateX: 180,
-          delay: 1000,
-        });
-
-        isFlipped.current = true;
-
-        //Content
-        contentTitleApi.start({
-          opacity: 1,
-          delay: 1800,
-        });
-
-        contentDescApi.start({
-          opacity: 1,
-          transform: 'translateY(0px)',
-          delay: 2600,
-        });
-
-        downloadBtnApi.start({
-          opacity: 1,
-          transform: 'translateX(0px)',
-          delay: 3600,
-        });
-
-      } else {
-        //Profile
-        subTitleApi.start({
-          opacity: 0,
-          transform: 'translateY(50px)',
-        });
-
-        trailApi.start({
-          opacity: 0,
-          rotateX: 0,
-        });
-
-        profileApi.start({
-          opacity: 0,
-          transform: 'translateY(50px)',
-        });
-
-        isFlipped.current = false;
-
-        //Content
-        contentTitleApi.start({
-          opacity: 0,
-        });
-
-        contentDescApi.start({
-          opacity: 0,
-          transform: 'translateY(50px)',
-        });
-
-        downloadBtnApi.start({
-          opacity: 0,
-          transform: 'translateX(-50px)',
-        });
-      }
-    }
-  });
+export default function About({
+  profile,
+  subTitle,
+  trail,
+  words,
+  contentTitle,
+  contentDesc,
+  downloadBtn
+}: IAboutProps) {
 
   return (
-    <article className={aboutStyles.about} ref={containerRef}>
+    <article className={aboutStyles.about}>
       <div className={aboutStyles.container}>
         <div className={aboutStyles.visual}>
           {profile.map((props, idx) => (
@@ -184,20 +42,20 @@ export default function About() {
             ))}
 
             <animated.div className={aboutStyles.second_text}>
-              {trail.map(({ rotateX, opacity }, idx) => (
+              {trail.map(({ opacity, rotateX }, idx) => (
                 <div key={idx}>
                   <animated.span
                     key={words[idx]}
                     style={{
-                      opacity: opacity.to(val => val),
-                      transform: rotateX.to(val => `perspective(600px) rotateX(${val}deg)`),
+                      opacity: opacity.to((value: number) => `${value}`),
+                      transform: rotateX.to((value: number) => `perspective(600px) rotateX(${value}deg)`),
                       transformStyle: 'preserve-3d',
                     }}
                   >{'?'}</animated.span>
                   <animated.span
                     style={{
-                      opacity: opacity.to(val => val),
-                      transform: rotateX.to(val => `perspective(600px) rotateX(${180 - val}deg)`),
+                      opacity: opacity.to((value: number) => `${value}`),
+                      transform: rotateX.to((value: number) => `perspective(600px) rotateX(${180 - value}deg)`),
                       transformStyle: 'preserve-3d',
                     }}
                   >{words[idx]}</animated.span>

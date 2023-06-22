@@ -1,147 +1,51 @@
 import React, { useRef } from "react";
 import * as worksStyles from "../../styles/components/main/Works.module.scss";
-import { useTrail, useSprings, useScroll, animated, config } from '@react-spring/web';
+import { useTrail, useSpring, useSprings, useScroll, animated, config } from '@react-spring/web';
 import WorkItem from "./workItem";
 import Company from "./company";
 import WideWorkItem from "./wideWorkItem";
 import { workItemsData, wideWorkItemData } from "../../data/dummy_data";
 
-export default function Works() {
+interface IWorksProps {
+  title: any;
+  company: any;
+  workItemSprings: any[];
+  wideWorkItem: any;
+}
 
-  const words = ['2', '1', '/', '0', '9', '~', '2', '3', '/', '0', '2', '_', 'T', 'H', 'E', 'C', 'A', 'M', 'P'];
-  const containerRef = React.useRef<HTMLDivElement>(null!);
-  const isFlipped = useRef(false);
-
-  const [fixedBg, fixedBgApi] = useSprings(1,
-    () => ({
-      from: {
-        display: 'none'
-      },
-      to: {
-        display: 'flex'
-      },
-    })
-  );
-
-  const [title, titleApi] = useSprings(1,
-    () => ({
-      from: {
-        opacity: 0,
-        transform: 'translateY(50px)'
-      },
-      to: {
-        opacity: 1,
-        transform: 'translateY(0px)'
-      },
-      config: config.stiff,
-    }), []);
-
-  const [trail, trailApi] = useTrail(
-    words.length,
-    () => ({
-      opacity: 0,
-      rotateX: 0,
-      config: config.stiff,
-    }), []);
-
-  const { scrollYProgress } = useScroll({
-    container: containerRef,
-    onChange: ({ value: { scrollYProgress } }) => {
-
-      if (scrollYProgress >= 0.6) {
-        titleApi.start({
-          opacity: 1,
-          transform: 'translateY(0px)',
-        });
-
-        trailApi.start({
-          opacity: 1,
-          rotateX: 180,
-        });
-
-        fixedBgApi.start({
-          display: 'flex',
-        });
-
-      } else {
-        titleApi.start({
-          opacity: 0,
-          transform: 'translateY(50px)',
-        });
-
-        trailApi.start({
-          opacity: 0,
-          rotateX: 0,
-        });
-      }
-
-      //fixedBg 위로 scroll하면 intro에서 안보이도록 중간에서 사라짐.
-      if (scrollYProgress < 0.6) {
-        fixedBgApi.start({
-          display: 'none'
-        });
-      }
-    }
-  });
+export default function Works({
+  title,
+  company,
+  workItemSprings,
+  wideWorkItem,
+}: IWorksProps) {
 
   return (
     <article className={worksStyles.works}>
       <div className={worksStyles.works_container}>
-        <strong className="screen_out">Work Experience</strong>
-        <Company />
+        <animated.strong style={{ ...title }} className={worksStyles.title}>Work Experience</animated.strong>
+        <Company springStyle={company} />
         <div className={worksStyles.works_list}>
-          {workItemsData.map((workItem, idx) => (
+          {workItemSprings.map(({ ...opacity }, index) => (
             <WorkItem
-              projectName={workItem.projectName}
-              category={workItem.category}
-              content={workItem.content}
-              imageName={`thecamp_0${idx + 1}`}
-              path={`/work/thecamp/${workItem.path}`}
-              key={idx}
+              springStyle={opacity}
+              projectName={workItemsData[index].projectName}
+              category={workItemsData[index].category}
+              content={workItemsData[index].content}
+              imageName={`thecamp_0${index + 1}`}
+              path={`/work/thecamp/${workItemsData[index].path}`}
+              key={index}
             />
           ))}
         </div>
         <WideWorkItem
+          springStyle={wideWorkItem}
           projectName={wideWorkItemData.projectName}
           category={wideWorkItemData.category}
           content={wideWorkItemData.content}
           path={`/work/thecamp/${wideWorkItemData.path}`}
         />
       </div>
-
-      {fixedBg.map((props, idx) => (
-        <animated.div className={worksStyles.fixed_bg} style={props} key={idx}>
-          {title.map((props, idx) => (
-            <animated.strong className={worksStyles.main_title} style={props} key={idx}>Work Experience</animated.strong>
-          ))}
-
-          <strong className={worksStyles.sub_title}>
-            <span className="screen_out">2021-23 THE CAMP</span>
-            <div className={worksStyles.animation_text}>
-              {trail.map(({ rotateX, opacity }, idx) => (
-                <div key={idx}>
-                  <animated.span
-                    key={idx}
-                    style={{
-                      opacity: opacity.to(val => val),
-                      transform: rotateX.to(val => `perspective(600px) rotateX(${val}deg)`),
-                      transformStyle: 'preserve-3d',
-                    }}
-                  >{'?'}</animated.span>
-                  <animated.span
-                    style={{
-                      opacity: opacity.to(val => val),
-                      transform: rotateX.to(val => `perspective(600px) rotateX(${180 - val}deg)`),
-                      transformStyle: 'preserve-3d',
-                    }}
-                  >{words[idx]}</animated.span>
-                </div>
-              ))}
-            </div>
-          </strong>
-        </animated.div>
-      ))}
-
     </article>
   )
 }
