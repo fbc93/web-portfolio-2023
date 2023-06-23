@@ -38,19 +38,21 @@
           }
 
           .sub {
-            font-size:2rem;
-            font-weight: 400;
-            font-family: monospace;
+            font-size: 2rem;
+            font-family: "Ysabeau SC", sans-serif;
+            font-weight: 500;
+            color:#999999;
           }
 
           .main {
-            margin-top: 1rem;
+            margin-top: 4rem;
 
             .text {
               font-size: 3rem;
-              font-family: monospace;
-              margin-bottom: 2rem;
+              margin-bottom: 1.5rem;
+              font-style: italic;
             }
+
             .animation_text {
               overflow: hidden;
               display: flex;
@@ -79,7 +81,7 @@
 
         .info_content {
           & > p {
-            margin: 9rem 0 3.6rem;
+            margin: 6rem 0 3rem;
             padding-right:10rem;
             line-height: 180%;
             font-size: 1.8rem;
@@ -125,7 +127,7 @@
     .content {
       width: 60%;
       overflow-x: hidden;
-      padding:calc(var(--desktop-header-height) + 5vh) 0;
+      padding:var(--desktop-header-height) 0;
 
       .content_container {
         padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
@@ -194,7 +196,7 @@
 
   .bg_direction_x {
     visibility: visible;
-    background-color: #dde2f5;
+    background-color: #e8ebf7;
     bottom: 0;
     height: 100%;
     left: 0;
@@ -211,15 +213,15 @@
     display: none;
     height: 100vh;
     position: absolute;
-    // background-color: #dde2f5;
+    background-color: #e8ebf7;
     user-select: none;
     visibility: hidden;
     width: 100%;
     will-change: transform;
     z-index: -999;
     top: 0;
+    bottom:0;
     left: 0;
-    bottom: 0;
   }
 }
 
@@ -231,8 +233,8 @@
       .info {
         width: 100%;
         position: relative;
-        padding-top: calc(var(--desktop-header-height) + 10rem);
-        padding-bottom: calc(var(--desktop-header-height) + 10rem);
+        padding-top: var(--desktop-header-height);
+        padding-bottom: var(--desktop-header-height);
         padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
         padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
         min-height: auto;
@@ -265,8 +267,12 @@
 
     .bg_direction_y {
       display: block;
-      visibility: visible;
+      position: absolute;
+    }
+
+    .fixed {
       position: fixed;
+      visibility: visible;
     }
   }
 }
