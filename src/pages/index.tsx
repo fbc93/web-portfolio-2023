@@ -276,7 +276,11 @@ const IndexPage: React.FC<PageProps> = () => {
       opacity: 1,
       transform: 'translateY(0px)',
     },
-    config: config.molasses,
+    config: {
+      mass: 2,
+      friction: 20,
+      tension: 200,
+    },
   }))
 
   const [contactTitle, contactTitleApi] = useSpring(() => ({
@@ -288,7 +292,11 @@ const IndexPage: React.FC<PageProps> = () => {
       opacity: 0,
       transform: 'translateY(50px)',
     },
-    config: config.molasses,
+    config: {
+      mass: 2,
+      friction: 20,
+      tension: 200,
+    },
   }))
 
   const [mailTrail, mailTrailApi] = useTrail(
@@ -296,7 +304,11 @@ const IndexPage: React.FC<PageProps> = () => {
     () => ({
       opacity: 0,
       y: 50,
-      config: config.stiff,
+      config: {
+        mass: 1,
+        friction: 30,
+        tension: 500,
+      },
     }), []);
 
   const [contactDesc, contactDescApi] = useSpring(() => ({
@@ -308,7 +320,7 @@ const IndexPage: React.FC<PageProps> = () => {
       opacity: 0,
       transform: 'translateY(50px)',
     },
-    config: config.molasses,
+    config: config.molasses
   }))
 
   const [contactLastDesc, contactLastDescApi] = useSpring(() => ({
@@ -320,26 +332,43 @@ const IndexPage: React.FC<PageProps> = () => {
       opacity: 0,
       transform: 'translateY(50px)',
     },
-    config: config.molasses,
+    config: config.molasses
   }))
 
   const [contactBtn, contactBtnApi] = useSpring(() => ({
     from: {
       opacity: 1,
-      transform: 'translateY(0px)',
+      transform: 'translateX(0px)',
     },
     to: {
       opacity: 0,
       transform: 'translateX(-50px)',
     },
-    config: config.molasses
+    config: config.molasses,
   }))
 
+  const [contactBg, contactBgApi] = useSpring(() => ({
+    from: {
+      opacity: 0.09,
+      scale: 1.2,
+    },
+    to: {
+      opacity: 0,
+      scale: 1,
+    },
+    config: {
+      mass: 2,
+      friction: 20,
+      tension: 80,
+    },
+  }))
 
   const { scrollYProgress } = useScroll({
     onChange: ({ value: { scrollYProgress } }) => {
       console.log("index___", scrollYProgress);
 
+
+      //Intro
       if (scrollYProgress <= 0.05) {
         mainTitleApi.start({
           opacity: 1,
@@ -609,6 +638,11 @@ const IndexPage: React.FC<PageProps> = () => {
           delay: 1000,
         })
 
+        contactBgApi.start({
+          opacity: 0.09,
+          scale: 1.2,
+        })
+
         contactBtnApi.start({
           opacity: 1,
           transform: 'translateX(0px)',
@@ -640,6 +674,11 @@ const IndexPage: React.FC<PageProps> = () => {
         contactLastDescApi.start({
           opacity: 0,
           transform: 'translateY(50px)',
+        })
+
+        contactBgApi.start({
+          opacity: 0,
+          scale: 1,
         })
 
         contactBtnApi.start({
@@ -696,6 +735,7 @@ const IndexPage: React.FC<PageProps> = () => {
         contactDesc={contactDesc}
         contactLastDesc={contactLastDesc}
         contactBtn={contactBtn}
+        contactBg={contactBg}
       />
     </Layout>
   )
