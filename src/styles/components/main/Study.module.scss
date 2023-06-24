@@ -38,7 +38,7 @@
           }
 
           .sub {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-family: "Ysabeau SC", sans-serif;
             font-weight: 500;
             color:#999999;
@@ -135,23 +135,46 @@
         width: 100%;
 
         .content_item {
-          & > a {
+         .content_item_container {
             display: flex;
             align-items: center;
             gap: 3rem;
 
             .thumbnail {
-              border:1px solid #cccccc;
-              border-radius: 1rem;
+              position: relative;
+              border:1px solid #999999;
+              border-radius: 2rem;
               flex-shrink: 0;
               height: auto;
               overflow: hidden;
-              width: 34rem;
+              width: 30rem;
               aspect-ratio: 34/22;
               display: block;
               object-fit: cover;
               & > div {
                 height: 100%;
+                transition: filter 0.2s ease-in-out;
+              }
+
+              .cover {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                color: #ffffff;
+                font-size: 1.6rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                font-weight: 400;
+                visibility: hidden;
+
+                & > svg {
+                  display: inline-block;
+                  font-size: 1.6rem;
+                }
               }
             }
 
@@ -160,6 +183,8 @@
               flex-direction: column;
               min-width: 0;
               width: 100%;
+              color: rgba(87, 96, 111, 0.8);
+              transition: filter 0.2s ease-in-out;
 
               & > span {
                 font-size: 1.6rem;
@@ -167,19 +192,51 @@
               }
 
               & > strong {
-                font-size: 2.5rem;
-                font-weight: 400;
+                font-size: 2.2rem;
+                font-weight: 500;
                 line-height: 180%;
-                margin: 0 0 2rem;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
               }
 
-              & > p {
-                font-size: 1.8rem;
-                line-height: 150%;
+               .category {
+                display: flex;
+                line-height: 180%;
+                color: rgb(106, 127, 232);
+                font-weight: 500;
+
+                & > li::after {
+                  content:'/';
+                  display: inline-block;
+                  padding: 0 0.5rem;
+                }
+
+                & > li:last-child::after {
+                  display: none;
+                }
               }
+
+              & > p {
+                font-size: 1.6rem;
+                line-height: 160%;
+              }
+            }
+          }
+
+          .content_item_container:hover {
+            .thumbnail {
+              & > div {
+                filter: brightness(0.5) blur(1.5px);
+              }
+
+              .cover {
+                visibility: visible;
+              }
+            }
+
+            .text {
+              color: rgba(87, 96, 111, 1.0);
             }
           }
 
@@ -196,7 +253,7 @@
 
   .bg_direction_x {
     visibility: visible;
-    background-color: #e8ebf7;
+    background-color: hsla(218, 44%, 95%, 0.6);
     bottom: 0;
     height: 100%;
     left: 0;
@@ -213,7 +270,7 @@
     display: none;
     height: 100vh;
     position: absolute;
-    background-color: #e8ebf7;
+    background-color: hsla(218, 44%, 95%, 0.6);
     user-select: none;
     visibility: hidden;
     width: 100%;
@@ -313,13 +370,13 @@
 
       .content {
         .content_container {
-          width: 100%;
+          width: 80%;
 
          .content_item {
-          max-width: 80%;
+          max-width: 100%;
           margin: auto;
 
-           & > a {
+           .content_item_container {
             flex-direction: column;
             justify-content: center;
 
@@ -355,13 +412,11 @@
 
       .content {
         .content_container {
+          width: 100%;
+          
          .content_item {
            max-width: 100%;
            width: 100%;
-
-           .text {
-            font-size: 2.5rem;
-           }
           }
         }
       }
@@ -400,7 +455,15 @@
       }
 
       .content {
-
+        .content_container {
+          .content_item {
+            .content_item_container {
+              .category {
+                font-size:1.4rem;
+              }
+            }
+          }
+        }
       }
     }
   }

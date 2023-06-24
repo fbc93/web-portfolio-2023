@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import React, { useState } from "react";
 import * as studyStyles from "../../styles/components/main/Study.module.scss";
 import { StaticImage } from "gatsby-plugin-image";
-import { FiArrowLeftCircle } from "react-icons/fi";
+import { FiArrowLeftCircle, FiExternalLink } from "react-icons/fi";
 import { useTrail, useSpring, useSprings, useScroll, animated, config } from '@react-spring/web';
 interface IStudyProps {
   words: string[];
@@ -46,10 +46,10 @@ export default function Study({
           <div className={studyStyles.info_container}>
             <div className={studyStyles.info_title}>
 
-              <animated.strong style={{ ...studySubTitle }} className={studyStyles.sub}>STUDY</animated.strong>
+              <animated.strong style={{ ...studySubTitle }} className={studyStyles.sub}>Study</animated.strong>
 
               <strong className={studyStyles.main}>
-                <span className="screen_out">overcome my gray zone</span>
+                <span className="screen_out">overcoming my gray zone</span>
 
                 <animated.div style={{ ...studyMiniTitle }} className={studyStyles.text}>Overcoming MY</animated.div>
 
@@ -78,16 +78,16 @@ export default function Study({
             <animated.div style={{ ...studyDesc }} className={studyStyles.info_content}>
               <p>
                 퇴사후, 근무할때는 경험하지 못했던 여러 프레임워크들을 부지런히 습득했습니다. <br />
-                프로젝트를 진행하면서 문제를 정의하고 해결해나가는 힘을 키울 수 있었어요. <br />
-                무엇보다 작업 완료 기한을 먼저 정하고, 그 기한을 지키는 연습을 함으로써 실제 업무를 하는 자세로 작업했습니다.
+                온라인 부트캠프 강의를 이용해 학습하고 진행한 개인 프로젝트들입니다. <br />
+                문제를 스스로 정의하고 적극적으로 해결해나가는 힘을 키울 수 있었어요. 🏋️‍♀️
               </p>
             </animated.div>
 
             <animated.div style={{ ...studyBtn }} className={studyStyles.linkBtn}>
-              <Link to="/">
+              <a href="https://github.com/fbc93" target="_blank">
                 <FiArrowLeftCircle />
                 <span>Github 바로가기</span>
-              </Link>
+              </a>
             </animated.div>
 
           </div>
@@ -96,48 +96,89 @@ export default function Study({
           <div className={studyStyles.content_container}>
 
             <div className={studyStyles.content_item}>
-              <Link to="/">
-                <span className={studyStyles.thumbnail}>
-                  <StaticImage src="../../../static/images/study_preview_01.png" alt="preview image" />
-                </span>
+              <div className={studyStyles.content_item_container}>
+                <a href="https://github.com/fbc93/time-rabbit-todo-app" target="_blank">
+                  <span className={studyStyles.thumbnail}>
+                    <p className={studyStyles.cover}>
+                      <span>Github 바로가기</span>
+                      <FiExternalLink />
+                    </p>
+                    <StaticImage src="../../../static/images/study_preview_01.png" alt="preview image" />
+                  </span>
+                </a>
                 <div className={studyStyles.text}>
-                  <span>sub title</span>
-                  <strong>title</strong>
-                  <p>쉽고, 재밌고, 특별함을 담아 글쓰는 걸 좋아해요.
-                    새로 배운 지식부터 공유하고 싶은 경험까지 글로 차곡차곡 담았습니다.
-                    지금까지 110만 명 이상이 블로그에 방문해서 글을 읽었어요.</p>
+                  <span>'23. 05. 06 - 05. 15 (10일)</span>
+                  <strong>타임래빗 투두 앱</strong>
+                  <ul className={studyStyles.category}>
+                    <li>React</li>
+                    <li>Typescript</li>
+                    <li>Recoil</li>
+                    <li>Styled-Component</li>
+                  </ul>
+                  <p>
+                    하루 24시간을 알차게 쓰기 위해 어떻게 동기부여를 하면 좋을까 고민하며 만든 Todo 앱입니다.
+                    react-dnd 라이브러리를 이용해서 Drag&Drop할 수 있는 todo 보드를 구현했습니다.
+                  </p>
                 </div>
-              </Link>
+              </div>
               <div className={studyStyles.line}></div>
             </div>
             <div className={studyStyles.content_item}>
-              <Link to="/">
-                <span className={studyStyles.thumbnail}>
-                  <StaticImage src="../../../static/images/study_preview_02.png" alt="preview image" />
-                </span>
+              <div className={studyStyles.content_item_container}>
+                <a href="https://github.com/fbc93/poong-player" target="_blank">
+                  <span className={studyStyles.thumbnail}>
+                    <p className={studyStyles.cover}>
+                      <span>Github 바로가기</span>
+                      <FiExternalLink />
+                    </p>
+                    <StaticImage src="../../../static/images/study_preview_02.png" alt="preview image" />
+                  </span>
+                </a>
                 <div className={studyStyles.text}>
-                  <span>sub title</span>
-                  <strong>title</strong>
-                  <p>쉽고, 재밌고, 특별함을 담아 글쓰는 걸 좋아해요.
-                    새로 배운 지식부터 공유하고 싶은 경험까지 글로 차곡차곡 담았습니다.
-                    지금까지 110만 명 이상이 블로그에 방문해서 글을 읽었어요.</p>
+                  <span>'23. 05. 22 - 06. 05 (15일)</span>
+                  <strong>Poong Player (풍-플레이어)</strong>
+                  <ul className={studyStyles.category}>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>MongoDB</li>
+                    <li>Pug / SCSS</li>
+                  </ul>
+                  <p>
+                    YouTube Iframe API를 이용해서 영상을 아카이빙하고 스트리밍할 수 있는 플랫폼입니다.
+                    회사내에서 프로젝트를 진행하면서 백엔드 개발자와 소통할 기회가 많았는데,
+                    함께 작업하면서 얻은 지식을 좀 더 명확하게 하기위해
+                    실제적으로 FE와 BE, 배포까지 혼자 진행해본 프로젝트입니다.
+                  </p>
                 </div>
-              </Link>
+              </div>
               <div className={studyStyles.line}></div>
             </div>
             <div className={studyStyles.content_item}>
-              <Link to="/">
-                <span className={studyStyles.thumbnail}>
-                  <StaticImage src="../../../static/images/study_preview_03.png" alt="preview image" />
-                </span>
+              <div className={studyStyles.content_item_container}>
+                <a href="https://github.com/fbc93/web-portfolio-2023" target="_blank">
+                  <span className={studyStyles.thumbnail}>
+                    <p className={studyStyles.cover}>
+                      <span>Github 바로가기</span>
+                      <FiExternalLink />
+                    </p>
+                    <StaticImage src="../../../static/images/study_preview_03.png" alt="preview image" />
+                  </span>
+                </a>
                 <div className={studyStyles.text}>
-                  <span>sub title</span>
-                  <strong>title</strong>
-                  <p>쉽고, 재밌고, 특별함을 담아 글쓰는 걸 좋아해요.
-                    새로 배운 지식부터 공유하고 싶은 경험까지 글로 차곡차곡 담았습니다.
-                    지금까지 110만 명 이상이 블로그에 방문해서 글을 읽었어요.</p>
+                  <span>'23. 06. 09 - 06. 24 (16일)</span>
+                  <strong>2023년 웹 포트폴리오</strong>
+                  <ul className={studyStyles.category}>
+                    <li>Gatsby.js</li>
+                    <li>Typescript</li>
+                    <li>React-Spring</li>
+                    <li>SCSS</li>
+                  </ul>
+                  <p>
+                    지금까지 학습해온 React와 TS 지식을 기반으로 새로운 도전을 해보기위해 Gatsby를 사용해 웹 포트폴리오를 만들었습니다.
+                    React-Spring을 이용하여 스크롤 애니메이션을 구현했습니다.
+                  </p>
                 </div>
-              </Link>
+              </div>
             </div>
 
           </div>
@@ -150,15 +191,15 @@ export default function Study({
             let progress = 0;
             let result = -60;
 
-            if (scrollP >= 0.74) {
-              const divideEnd = (scrollP * 100) - 74;
-              const divisor = 20;
+            if (scrollP >= 0.6) {
+              const divideEnd = (scrollP * 100) - 60;
+              const divisor = 30;
 
               progress = (divideEnd / divisor) * 100;
-              result = -74 + progress;
+              result = -60 + progress;
             }
 
-            if (scrollP >= 0.88) {
+            if (scrollP >= 0.78) {
               result = 0;
             }
 

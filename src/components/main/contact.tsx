@@ -45,7 +45,7 @@ export default function Contact({
   return (
     <article className={contactStyles.contact}>
       <div className={contactStyles.container}>
-        <animated.strong style={{ ...contactSubTitle }}>CONTACT</animated.strong>
+        <animated.strong style={{ ...contactSubTitle }}>Contact</animated.strong>
 
         <animated.div style={{ ...contactTitle }} className={contactStyles.sub_title}>
           <span>함께 일할 줄 아는 동료를 찾고계신가요?</span>
