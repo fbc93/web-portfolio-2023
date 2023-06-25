@@ -3,6 +3,28 @@
   position: relative;
   margin-right: 1.5rem;
   
+  &:hover {
+    .desktop {
+      .image {
+        filter: brightness(0.5);
+       }
+
+      .shadow {
+        transform: translateY(20px);
+      }
+    }
+
+    .mobile {
+      .image {
+        filter: brightness(0.5);
+       }
+
+       .shadow {
+        transform: translateY(20px);
+      }
+    }
+  }
+  
   .preview {
     width: 100%;
     display: flex;
@@ -16,19 +38,17 @@
       aspect-ratio: 6/5;
 
       .image {
+        transition: filter 0.3s ease-in-out;
         width: 100%;
         height: 100%;
         overflow: hidden;
         border-radius: 2rem;
         border: 1px solid #cccccc;
         background-color: #999999;
-
-        & > div:first-child {
-          filter: grayscale(1) blur(1px);
-        }
       }
 
       .shadow {
+        transition: transform 0.3s ease-in-out;
         position: absolute;
         width: 100%;
         height: 98%;
@@ -47,19 +67,17 @@
       aspect-ratio: 1/1.95;
 
       .image {
+        transition: filter 0.3s ease-in-out;
         width: 100%;
         height: 100%;
         overflow: hidden;
         border-radius: 2rem;
         border: 1px solid #cccccc;
         background-color: #999999;
-
-        & > div:first-child {
-          filter: grayscale(1) blur(1px);
-        }
       }
 
       .shadow {
+        transition: transform 0.3s ease-in-out;
         position: absolute;
         width: 100%;
         height: 98%;
@@ -162,7 +180,7 @@
         width: fit-content;
         position: relative;
         aspect-ratio: 0;
-        height: 750px;
+        height: 65vh;
       }
 
       .desktop { 
@@ -188,7 +206,6 @@
       gap: 2rem;
       
       .mobile {
-
         & > div {
           width: 100%;
         }

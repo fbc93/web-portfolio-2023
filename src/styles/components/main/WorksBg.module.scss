@@ -1,0 +1,91 @@
+.work_bg {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  // visibility: hidden;
+  width: 100%;
+  z-index: -1;
+
+  .title {
+    font-family: "Ysabeau SC", sans-serif;
+    font-weight: 500;
+    color: #999999;
+    opacity: 0.3;
+    font-size:3rem;
+  }
+
+  .bg_text {
+    width: 100%;
+    transform-origin: 50% 50%;
+
+    .image {
+      & > svg {
+        height: 30rem;
+        opacity: 0.1;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .work_bg {
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .bg_text {
+      .image {
+        & > svg {
+          height: 20rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 944px) {
+  .work_bg {
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .bg_text {
+      .image {
+        & > svg {
+          height: 16rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .work_bg {
+    .title {
+      display: none;
+    }
+
+    .bg_text {
+      margin-top: -10vh;
+      transform: rotate(90deg);
+
+      .image {
+        width: 100%;
+        
+        & > svg {
+          height: 20rem;
+          width: 130%;
+        }
+      }
+    }
+  }
+}

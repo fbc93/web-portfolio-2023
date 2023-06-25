@@ -1,16 +1,34 @@
 .work_item {
   position: relative;
 
+  &:hover{
+    .preview {
+      & > div:first-child {
+        filter: brightness(0.5)!important;
+      }
+
+      .preview_shadow {
+        transform:translateY(20px)!important;
+      }
+    }
+
+    .card {
+      transform: translateY(-100px)!important;
+    }
+
+  }
+
   .preview {
     border: 1px solid #cccccc;
     border-radius: 2rem;
     overflow: hidden;
 
     & > div:first-child {
-      filter: grayscale(1) blur(1px);
+      transition: filter 0.3s ease-in-out;
     }
 
     .preview_shadow {
+      transition: transform 0.3s ease-in-out;
       backdrop-filter: blur(1px);
       background-color: hsla(0,0%,80%,0.7);
       position: absolute;
@@ -24,6 +42,7 @@
   }
 
   .card {
+    transition: transform 0.3s ease-in-out;
     aspect-ratio: 3/2;
     background-color: #eceaeaf5;
     border:1px solid #cccccc;
@@ -86,9 +105,8 @@
 
 @media screen and (max-width: 1300px){
   .work_item {
-    width: 340px;
-    display: inline-flex;
-    margin: 0 2.5rem 5vh 2.5rem;
+    width: 30%;
+    margin-bottom: 5vh;
   }
 
   .work_item:nth-child(n+2){
@@ -96,29 +114,20 @@
   }
 }
 
-@media screen and (max-width: 750px) {
-  .work_item:nth-child(n+2){
-    margin-bottom: 5vh;
-  }
-
-  .work_item:last-child {
-    margin-bottom: 0;
+@media screen and (max-width: 944px){
+  .work_item {
+    width: 40%;
   }
 }
 
-@media screen and (max-width: 883px){
-  .work_item:nth-child(n+2){
-    margin-bottom: 5vh;
-  }
-
-  .work_item:last-child {
-    margin-bottom: 0vh;
+@media screen and (max-width: 768px) {
+  .work_item {
+   width: 55%;
   }
 }
 
 @media screen and (max-width: 530px){
   .work_item {
-    width: 85%;
-    margin-bottom: 10vh;
+    width: 80%;
   }
 }

@@ -156,13 +156,13 @@ const IndexPage: React.FC<PageProps> = () => {
 
 
   //Works useSpring
-  const [title, titleApi] = useSpring(() => ({
+  const [worksTextBg, worksTextBgApi] = useSpring(() => ({
     from: {
-      opacity: 0,
+      opacity: 1,
       transform: 'translateY(50px)',
     },
     to: {
-      opacity: 1,
+      opacity: 0,
       transform: 'translateY(0px)',
     },
     config: config.stiff,
@@ -498,11 +498,20 @@ const IndexPage: React.FC<PageProps> = () => {
 
 
       //Works
-      if (scrollYProgress >= 0.19 && scrollYProgress <= 0.45) {
-        titleApi.start({
+      if (scrollYProgress >= 0.27 && scrollYProgress <= 0.7) {
+        worksTextBgApi.start({
           opacity: 1,
+          transform: 'translateY(50px)',
+        })
+
+      } else {
+        worksTextBgApi.start({
+          opacity: 0,
           transform: 'translateY(0px)',
         })
+      }
+
+      if (scrollYProgress >= 0.19 && scrollYProgress <= 0.45) {
 
         companyApi.start({
           opacity: 1,
@@ -511,10 +520,6 @@ const IndexPage: React.FC<PageProps> = () => {
         })
 
       } else {
-        titleApi.start({
-          opacity: 0,
-          transform: 'translateY(50px)',
-        })
 
         companyApi.start({
           opacity: 0,
@@ -528,6 +533,7 @@ const IndexPage: React.FC<PageProps> = () => {
           transform: 'translateY(0px)',
           delay: 600,
         })
+
       } else {
         workItemSpringsApi.start({
           opacity: 0,
@@ -714,7 +720,7 @@ const IndexPage: React.FC<PageProps> = () => {
         downloadBtn={downloadBtn}
       />
       <Works
-        title={title}
+        worksTextBg={worksTextBg}
         company={company}
         workItemSprings={workItemSprings}
         wideWorkItem={wideWorkItem}

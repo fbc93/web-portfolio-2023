@@ -9,11 +9,12 @@
   height: auto;
   color:#333333;
   margin-left: 2rem;
+  margin-top: 2.5rem;
   border:1px solid #cccccc;
 
   .company_info {
     display: grid;
-    grid-template-rows: 270px 50px;
+    grid-template-rows: 25rem 6rem;
     justify-content: flex-start;
     align-items: start;
     position: relative;
@@ -21,6 +22,7 @@
     left: -2rem;
 
     .logo {
+      width: 20rem;
       border-radius: 2rem;
       overflow: hidden;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -28,8 +30,6 @@
     }
 
     .container {
-      
-
       .title {
         display: flex;
         max-width: 38rem;
@@ -128,25 +128,41 @@
 
 @media screen and (max-width: 1300px){
   .company {
-    width: 100%;
+    width: calc(100% - 2rem);
+    margin: 2.5rem auto auto 2rem;
+
+    .company_desc {
+      padding: 4rem 4rem 4rem 4rem;
+    }
   }
 }
 
 @media screen and (max-width: 768px){
   .company {
     grid-template-columns: auto;
-    width: 100%;
-    margin-left: 0;
+    margin: 2.5rem auto auto 3rem;
+    width: calc(100% - 3rem);
 
     .company_info {
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 16rem 1fr;
       grid-template-rows:none ;
-      align-items: center;
+      align-items: end;
       column-gap: 3rem;
-      left:0;
+      left: -3rem;
 
       .logo {
-        width: 20rem;
+        width: 16rem;
+      }
+
+      .container {
+        .title {
+          gap: 1.5rem;
+          flex-direction: column;
+
+          .duration {
+            font-size:1.5rem;
+          }
+        }
       }
     }
 
@@ -178,7 +194,36 @@
     }
     
     .company_desc {
-      padding: 1rem 3rem 5rem 3rem;
+      padding: 1rem 2.5rem 4rem 2.5rem;
+
+      .content {
+        font-size: 1.4rem;
+      }
+
+      .service_tech {
+        .tech_desc {
+          font-size: 1.4rem;
+        }
+      }
+
+      .my_tech {
+        & > div:last-child {
+          font-size: 1.4rem;
+          line-height: 150%;
+        }
+      }
+
+      .dev_env {
+        & > div:last-child {
+          font-size: 1.4rem;
+        }
+      }
+
+      .co_work_tool {
+        & > div:last-child {
+          font-size: 1.4rem;
+        }
+      }
     }
   }
 }
@@ -186,14 +231,18 @@
 @media screen and (max-width: 460px) {
 
   .company {
+    width: calc(100% - 1rem);
+    margin: 2rem 0 auto 1rem;
+
     .company_info {
-      grid-template-columns: 110px 1fr;
-      column-gap: 1.5rem;
+      grid-template-columns: 120px 1fr;
+      column-gap: 3rem;
 
       .logo {
         width: 10rem;
-        margin-left: 1rem;
+        margin-left: 2rem;
         border-radius: 1.5rem;
+        margin-bottom: 1.5rem;
       }
 
       .container {

@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
 import { FiLink } from "react-icons/fi";
 import { StaticImage } from "gatsby-plugin-image";
 import { useTrail, useSpring, useSprings, useScroll, animated, config } from '@react-spring/web';
@@ -24,7 +24,10 @@ export default function WorkItem({
 }: IWorkItemProps) {
 
   return (
-    <animated.div style={springStyle} className={workItemStyles.work_item}>
+    <animated.div
+      style={springStyle}
+      className={workItemStyles.work_item}>
+
       <div className={workItemStyles.preview}>
         {imageName === "thecamp_01" && <StaticImage src="../../../static/images/thecamp_01.png" alt="preview image" />}
         {imageName === "thecamp_02" && <StaticImage src="../../../static/images/thecamp_02.png" alt="preview image" />}

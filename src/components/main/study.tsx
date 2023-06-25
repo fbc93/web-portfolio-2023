@@ -168,7 +168,7 @@ export default function Study({
                   <span>'23. 06. 09 - 06. 24 (16일)</span>
                   <strong>2023년 웹 포트폴리오</strong>
                   <ul className={studyStyles.category}>
-                    <li>Gatsby.js</li>
+                    <li>Gatsby</li>
                     <li>Typescript</li>
                     <li>React-Spring</li>
                     <li>SCSS</li>
