@@ -6,7 +6,7 @@ export default function WorksBgText() {
       <text
         x="30" y="90"
         fill="#999999" fontSize="80" fontStyle="italic" fontFamily="'Pretendard', cursive">
-        23' THE CAMP
+        21' THE CAMP
       </text>
     </svg>
   );

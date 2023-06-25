@@ -1,14 +1,14 @@
-import React, { useRef } from "react";
+import React from "react";
 import * as worksStyles from "../../styles/components/main/Works.module.scss";
 import * as worksBgStyles from "../../styles/components/main/WorksBg.module.scss";
-import { useTrail, useSpring, useSprings, useScroll, animated, config } from '@react-spring/web';
+import { animated } from '@react-spring/web';
 import WorkItem from "./workItem";
 import Company from "./company";
 import WideWorkItem from "./wideWorkItem";
-import { workItemsData, wideWorkItemData } from "../../data/dummy_data";
 import WorksBgText from "./worksBgText";
-
 interface IWorksProps {
+  workData: any;
+  wideWorData: any;
   worksTextBg: any;
   company: any;
   workItemSprings: any[];
@@ -16,6 +16,8 @@ interface IWorksProps {
 }
 
 export default function Works({
+  workData,
+  wideWorData,
   worksTextBg,
   company,
   workItemSprings,
@@ -31,21 +33,21 @@ export default function Works({
           {workItemSprings.map(({ ...opacity }, index) => (
             <WorkItem
               springStyle={opacity}
-              projectName={workItemsData[index].projectName}
-              category={workItemsData[index].category}
-              content={workItemsData[index].content}
-              imageName={`thecamp_0${index + 1}`}
-              path={`/work/thecamp/${workItemsData[index].path}`}
+              projectName={workData[index].frontmatter?.name}
+              category={workData[index].frontmatter?.category}
+              content={workData[index].frontmatter?.description}
+              previewImage={workData[index].frontmatter?.previewImage?.childImageSharp?.gatsbyImageData}
+              path={`/work/thecamp/${workData[index].frontmatter?.slug}`}
               key={index}
             />
           ))}
         </div>
         <WideWorkItem
           springStyle={wideWorkItem}
-          projectName={wideWorkItemData.projectName}
-          category={wideWorkItemData.category}
-          content={wideWorkItemData.content}
-          path={`/work/thecamp/${wideWorkItemData.path}`}
+          wideWorData={wideWorData}
+          projectName={wideWorData.name}
+          content={wideWorData.description}
+          path={`/work/thecamp/${wideWorData.slug}`}
         />
       </div>
       <animated.div

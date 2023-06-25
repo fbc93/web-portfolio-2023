@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useRef } from "react"
-import { HeadFC, PageProps } from "gatsby"
+import { graphql, HeadFC, PageProps } from "gatsby"
 import { SEO } from "../components/seo"
 import Layout from "../components/layout"
 import Intro from "../components/main/intro"
@@ -12,8 +12,10 @@ import Footer from "../components/layout/footer"
 import Contact from "../components/main/contact"
 import { useScroll, animated, useSprings, useSpring, config, useTrail } from '@react-spring/web';
 
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage = ({ data }: PageProps<Queries.WorkItemDataQuery>) => {
   const containerRef = React.useRef<HTMLDivElement>(null!)
+  const workItemData = data.allMdx.nodes.filter((item, index) => index <= 3)
+  const wideWorData = data.allMdx.nodes[4].frontmatter;
 
   //Intro useSpring
   const [mainTitle, mainTitleApi] = useSpring(() => ({
@@ -365,7 +367,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   const { scrollYProgress } = useScroll({
     onChange: ({ value: { scrollYProgress } }) => {
-      console.log("index___", scrollYProgress);
+      //console.log("index___", scrollYProgress);
 
 
       //Intro
@@ -498,7 +500,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
 
       //Works
-      if (scrollYProgress >= 0.27 && scrollYProgress <= 0.7) {
+      if (scrollYProgress >= 0.25 && scrollYProgress <= 0.7) {
         worksTextBgApi.start({
           opacity: 1,
           transform: 'translateY(50px)',
@@ -720,6 +722,8 @@ const IndexPage: React.FC<PageProps> = () => {
         downloadBtn={downloadBtn}
       />
       <Works
+        workData={workItemData}
+        wideWorData={wideWorData}
         worksTextBg={worksTextBg}
         company={company}
         workItemSprings={workItemSprings}
@@ -750,3 +754,28 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage
 
 export const Head: HeadFC = () => <SEO title="웹 포트폴리오" />
+
+export const query = graphql`
+  query WorkItemData {
+    allMdx {
+      nodes {
+          frontmatter {
+            category
+            description
+            name
+            slug
+            previewPCImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+            previewImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
+`

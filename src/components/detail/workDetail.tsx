@@ -3,25 +3,29 @@ import React from "react"
 import * as workDetailStyles from "../../styles/components/detail/WorkDetail.module.scss";
 import ProjectTitleCard from "./card";
 import GoBackBtn from "./goBackBtn";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import ImageLayout from "./imageLayout";
 import ImagesLayout from "./imagesLayout";
 import NextWorkList from "./nextWorkList";
+interface IWorkDetailProps {
+  data: Queries.WorkDetailQuery;
+  previewImage: any;
+}
 
-export default function WorkDetail() {
+export default function WorkDetail({ data, previewImage }: IWorkDetailProps) {
   return (
     <article className={workDetailStyles.work_detail}>
       <GoBackBtn />
       <div className={workDetailStyles.container}>
         <div className={workDetailStyles.preview}>
-          <StaticImage src="../../../static/images/thecamp_01.png" alt="preview image" />
+          <GatsbyImage image={previewImage} alt="preview image" />
         </div>
-        <ProjectTitleCard />
+        <ProjectTitleCard data={data} />
       </div>
       <ImageLayout />
       <ImageLayout />
       <ImagesLayout />
-      <NextWorkList />
+      <NextWorkList data={data} />
     </article>
   )
 }

@@ -1,14 +1,19 @@
 import React from "react";
 import * as cardStyles from "../../styles/components/detail/Card.module.scss";
 
-export default function Card() {
+interface ICardProps {
+  data: Queries.WorkDetailQuery;
+}
+
+export default function Card({ data }: ICardProps) {
   return (
     <div className={cardStyles.card}>
       <span className={cardStyles.sub_title}>WORK DETAIL</span>
-      <strong className={cardStyles.title}>보고싶은군인 카드 UI 개선</strong>
+      <strong className={cardStyles.title}>
+        {data.mdx?.frontmatter?.name}
+      </strong>
       <div className={cardStyles.category}>
-        <span>UI 리뉴얼</span>
-        <span>리팩토링</span>
+        <span>{data.mdx?.frontmatter?.category}</span>
       </div>
       <div className={cardStyles.team}>
         <span>디자이너</span>

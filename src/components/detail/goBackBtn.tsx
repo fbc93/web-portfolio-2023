@@ -1,13 +1,13 @@
-import { navigate } from "gatsby";
+import { Link, navigate } from "gatsby";
 import React from "react";
 import { FiArrowLeftCircle } from "react-icons/fi";
 import * as GoBackStyles from "../../styles/components/detail/GoBackBtn.module.scss";
 
 export default function GoBackBtn() {
   return (
-    <button className={GoBackStyles.go_back_btn} onClick={() => navigate(-1)}>
+    <Link to="/" className={GoBackStyles.go_back_btn}>
       <FiArrowLeftCircle />
       <span>Go Back</span>
-    </button>
+    </Link>
   );
 }

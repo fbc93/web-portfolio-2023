@@ -33,7 +33,14 @@ const config: GatsbyConfig = {
         icon: "./static/favicons/favicon-32x32.svg",
         icons: IconsConfig,
       },
-    }
+    },
+    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/work-items`
+      }
+    },
   ],
 }
 
