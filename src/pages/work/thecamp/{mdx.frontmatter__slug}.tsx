@@ -38,6 +38,7 @@ export const query = graphql`
         description
         name
         slug
+        team
         previewImage {
         childImageSharp {
           gatsbyImageData

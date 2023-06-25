@@ -21,6 +21,8 @@ export default function WideWorkItem({
   path,
 }: IWideWorkItem) {
 
+  console.log(wideWorData)
+
   return (
     <animated.div style={springStyle} className={wideWorkItemStyles.wide_work_item}>
       <div className={wideWorkItemStyles.preview}>

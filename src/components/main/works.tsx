@@ -24,6 +24,8 @@ export default function Works({
   wideWorkItem,
 }: IWorksProps) {
 
+  console.log(wideWorData)
+
   return (
     <article className={worksStyles.works}>
       <div className={worksStyles.works_container}>

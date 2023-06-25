@@ -35,16 +35,19 @@
     margin-bottom: 3rem;
     font-weight: 400;
     color: #a5a5a5;
-
-    .bar {
-      font-weight: 100;
+    & > div {
       display: inline-block;
-      margin: 0 1rem;
-    }
 
-    .my_job {
-      color:#333333;
-      font-weight: 600;
+      .bar {
+        font-weight: 100;
+        display: inline-block;
+        margin: 0 1rem;
+      }
+  
+      .my_job {
+        color:#333333;
+        font-weight: 600;
+      }
     }
   }
 

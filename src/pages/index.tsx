@@ -757,7 +757,7 @@ export const Head: HeadFC = () => <SEO title="웹 포트폴리오" />
 
 export const query = graphql`
   query WorkItemData {
-    allMdx {
+    allMdx (sort: {frontmatter: {id: ASC}}) {
       nodes {
           frontmatter {
             category
@@ -770,8 +770,8 @@ export const query = graphql`
               }
             }
             previewImage {
-            childImageSharp {
-              gatsbyImageData
+              childImageSharp {
+                gatsbyImageData
             }
           }
         }
