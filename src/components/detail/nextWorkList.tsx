@@ -3,11 +3,11 @@ import React from "react";
 import * as nextWorkListStyle from "../../styles/components/detail/NextWorkList.module.scss";
 import GoBackBtn from "./goBackBtn";
 
-interface INextWorkList {
+interface INextWorkListProps {
   data: Queries.WorkDetailQuery;
 }
 
-export default function NextWorkList({ data }: INextWorkList) {
+export default function NextWorkList({ data }: INextWorkListProps) {
   const allWorkList = data.allMdx.nodes;
   const currentWork = data.mdx?.frontmatter?.slug;
   const nextWorkList = allWorkList.filter(item => item.frontmatter?.slug != currentWork);

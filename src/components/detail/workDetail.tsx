@@ -33,9 +33,13 @@ export default function WorkDetail({ data }: IWorkDetailProps) {
         </div>
         <ProjectTitleCard data={data} />
       </div>
-      <ImageLayout />
-      <ImageLayout />
-      <ImagesLayout />
+
+      <ImageLayout data={data} />
+
+      {data.mdx?.frontmatter?.imagesLayout_01_image != null && (
+        <ImagesLayout data={data} />
+      )}
+
       <NextWorkList data={data} />
     </article>
   )

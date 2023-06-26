@@ -22,7 +22,7 @@ export default function WorkItemDetail({ data }: IWorkItemDetailProps) {
 
 export const query = graphql`
   query WorkDetail($frontmatter__slug: String) {
-    allMdx {
+    allMdx(sort: {frontmatter: {id: ASC}}) {
       nodes {
         frontmatter {
           slug
@@ -30,6 +30,7 @@ export const query = graphql`
         }
       }
     }
+    
     mdx(frontmatter: { slug: { eq: $frontmatter__slug }}) {
       frontmatter {
         category
@@ -39,6 +40,40 @@ export const query = graphql`
         team
         cardImage
         cardDesc
+        imageLayout_01_content
+        imageLayout_01_image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        imageLayout_01_image_big {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        imageLayout_02_content
+        imageLayout_02_image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        imageLayout_02_image_big {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        imagesLayout_01_content
+        imagesLayout_01_image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        imagesLayout_02_content
+        imagesLayout_02_image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
   }

@@ -170,7 +170,7 @@ export default function Study({
                   <ul className={studyStyles.category}>
                     <li>Gatsby</li>
                     <li>Typescript</li>
-                    <li>React-Spring</li>
+                    <li>Graphql</li>
                     <li>SCSS</li>
                   </ul>
                   <p>
