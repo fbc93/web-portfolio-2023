@@ -4,7 +4,6 @@ import Layout from "../../../components/layout";
 import { SEO } from "../../../components/seo";
 import WorkDetail from "../../../components/detail/workDetail";
 import Footer from "../../../components/layout/footer";
-import { getImage } from "gatsby-plugin-image";
 
 interface IWorkItemDetailProps {
   data: Queries.WorkDetailQuery;
@@ -12,11 +11,10 @@ interface IWorkItemDetailProps {
 
 export default function WorkItemDetail({ data }: IWorkItemDetailProps) {
   const containerRef = React.useRef<HTMLDivElement>(null!)
-  const previewImage = getImage(data.mdx?.frontmatter?.previewImage?.childImageSharp?.gatsbyImageData!);
 
   return (
     <Layout containerRef={containerRef}>
-      <WorkDetail data={data} previewImage={previewImage} />
+      <WorkDetail data={data} />
       <Footer />
     </Layout>
   )
@@ -39,11 +37,8 @@ export const query = graphql`
         name
         slug
         team
-        previewImage {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
+        cardImage
+        cardDesc
       }
     }
   }

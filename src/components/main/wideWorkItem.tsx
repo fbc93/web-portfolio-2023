@@ -21,20 +21,18 @@ export default function WideWorkItem({
   path,
 }: IWideWorkItem) {
 
-  console.log(wideWorData)
-
   return (
     <animated.div style={springStyle} className={wideWorkItemStyles.wide_work_item}>
       <div className={wideWorkItemStyles.preview}>
         <div className={wideWorkItemStyles.mobile}>
           <div className={wideWorkItemStyles.image}>
-            <GatsbyImage image={wideWorData.previewImage.childImageSharp.gatsbyImageData} alt="preview image" />
+            <GatsbyImage image={wideWorData.previewImage.childImageSharp.gatsbyImageData} alt="캠프몰(카페24) 모바일" />
           </div>
           <div className={wideWorkItemStyles.shadow}></div>
         </div>
         <div className={wideWorkItemStyles.desktop}>
           <div className={wideWorkItemStyles.image}>
-            <GatsbyImage image={wideWorData.previewPCImage.childImageSharp.gatsbyImageData} alt="preview image" />
+            <GatsbyImage image={wideWorData.previewPCImage.childImageSharp.gatsbyImageData} alt="캠프몰(카페24) 데스크탑" />
           </div>
           <div className={wideWorkItemStyles.shadow}></div>
         </div>
