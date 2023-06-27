@@ -39,7 +39,7 @@ export default function Company({ springStyle }: any) {
         <div className={companyStyles.my_tech}>
           <div className={companyStyles.title}>퍼블리싱 기술 스택</div>
           <div>
-            HTML5(JSP) / CSS3 / Javascript(ES6) / JSTL / jQuery
+            HTML5(JSP) / CSS3 / Javascript(ES6) / JSTL / jQuery를 이용한 Ajax
           </div>
         </div>
 
