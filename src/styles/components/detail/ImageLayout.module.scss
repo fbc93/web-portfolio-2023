@@ -30,23 +30,25 @@
       gap: 2rem;
 
       & > div {
-        border:1px solid #cccccc;
-        height: 100%;
-        width: 100%;
         border-radius: 1rem;
-        aspect-ratio: 304/222;
         font-size: 1.6rem;
         line-height: 150%;
         overflow: hidden;
+        color: #4e4e4e;
+      }
 
+      & > div:first-child {
+        aspect-ratio: 304/222;
+        border:1px solid #cccccc;
         & > div {
           width: 100%;
           height: 100%;
         }
       }
-
       & > div:last-child {
-        padding: 2rem;
+        line-height: 200%;
+        font-size: 1.7rem;
+        padding: 0 1rem;
       }
     }
   }

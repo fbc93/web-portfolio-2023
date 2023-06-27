@@ -2,9 +2,9 @@
   max-width: 120rem;
   margin: auto auto 10vh auto;
   display: grid;
-  grid-template-columns: 50% calc(50% - 2rem);
+  grid-template-columns: 50% calc(50% - 5rem);
   justify-content: center;
-  gap:2rem;
+  gap:5rem;
 
   .image_container {
     display: grid;
@@ -17,6 +17,7 @@
       border-radius: 2rem;
       overflow: hidden;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      aspect-ratio: 290/625;
     }
   }
 
@@ -25,13 +26,19 @@
     grid-template-rows: 1fr 1fr;
     gap: 2rem;
 
-    & > div {
+    & > div:first-child {
       border:1px solid #cccccc;
-      border-radius: 2rem;
+      border-radius: 1rem;
+      aspect-ratio: 304/180;
+    }
+
+    & > div:last-child {
       overflow: hidden;
       padding: 3rem;
-      font-size:1.6rem;
-      line-height: 160%;
+      padding: 0 1.5rem;
+      font-size:1.7rem;
+      line-height: 200%;
+      color: #4e4e4e;
     }
   }
 }

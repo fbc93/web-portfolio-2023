@@ -63,6 +63,11 @@ export const query = graphql`
           }
         }
         imagesLayout_01_content
+        imagesLayout_01_content_image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
         imagesLayout_01_image {
           childImageSharp {
             gatsbyImageData

@@ -18,9 +18,15 @@ export default function ImagesLayout({ data }: IImagesLayoutProps) {
         </div>
       </div>
       <div className={imagesLayoutStyle.content_container}>
-        <div>
-          {data.mdx?.frontmatter?.imagesLayout_01_content}
-        </div>
+
+        {data.mdx?.frontmatter?.imagesLayout_01_content != null && (
+          <div>{data.mdx?.frontmatter?.imagesLayout_01_content}</div>
+        )}
+
+        {data.mdx?.frontmatter?.imagesLayout_01_content === null && (
+          <GatsbyImage image={data.mdx.frontmatter.imagesLayout_01_content_image?.childImageSharp?.gatsbyImageData as any} alt="preview image" />
+        )}
+
         <div>{data.mdx?.frontmatter?.imagesLayout_02_content}</div>
       </div>
     </div>
