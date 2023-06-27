@@ -26,19 +26,29 @@
     grid-template-rows: 1fr 1fr;
     gap: 2rem;
 
+    .text {
+      font-size:1.7rem;
+      line-height: 200%;
+      padding: 3rem;
+      color:#4e4e4e;
+    }
+
     & > div:first-child {
       border:1px solid #cccccc;
       border-radius: 1rem;
       aspect-ratio: 304/180;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
 
     & > div:last-child {
       overflow: hidden;
       padding: 3rem;
-      padding: 0 1.5rem;
       font-size:1.7rem;
       line-height: 200%;
       color: #4e4e4e;
+      border-radius: 1rem;
+      border:1px solid #cccccc;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
   }
 }

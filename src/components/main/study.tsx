@@ -111,7 +111,7 @@ export default function Study({
                   <strong>타임래빗 투두 앱</strong>
                   <ul className={studyStyles.category}>
                     <li>React</li>
-                    <li>Typescript</li>
+                    <li>TS</li>
                     <li>Recoil</li>
                     <li>Styled-Component</li>
                   </ul>
@@ -169,8 +169,8 @@ export default function Study({
                   <strong>2023년 웹 포트폴리오</strong>
                   <ul className={studyStyles.category}>
                     <li>Gatsby</li>
-                    <li>Typescript</li>
-                    <li>Graphql</li>
+                    <li>TS</li>
+                    <li>GraphOL</li>
                     <li>SCSS</li>
                   </ul>
                   <p>

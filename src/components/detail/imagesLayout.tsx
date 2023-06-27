@@ -20,7 +20,7 @@ export default function ImagesLayout({ data }: IImagesLayoutProps) {
       <div className={imagesLayoutStyle.content_container}>
 
         {data.mdx?.frontmatter?.imagesLayout_01_content != null && (
-          <div>{data.mdx?.frontmatter?.imagesLayout_01_content}</div>
+          <div className={imagesLayoutStyle.text}>{data.mdx?.frontmatter?.imagesLayout_01_content}</div>
         )}
 
         {data.mdx?.frontmatter?.imagesLayout_01_content === null && (
