@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
-import * as contactStyles from "../../styles/components/main/Contact.module.scss";
+import * as contactStyles from "../../styles/components/main/contact.module.scss";
 import { FiArrowLeftCircle, FiCopy, FiThumbsUp } from "react-icons/fi";
 import { useScroll, animated, useSprings, useSpring, config, useTrail } from '@react-spring/web';
 import Logo from "./logo";

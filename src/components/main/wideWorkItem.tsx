@@ -1,7 +1,7 @@
 import React from "react";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { FiLink } from "react-icons/fi";
-import * as wideWorkItemStyles from "../../styles/components/main/WideWorkItem.module.scss";
+import * as wideWorkItemStyles from "../../styles/components/main/wideWorkItem.module.scss";
 import { Link } from "gatsby";
 import { useTrail, useSpring, useSprings, useScroll, animated, config } from '@react-spring/web';
 

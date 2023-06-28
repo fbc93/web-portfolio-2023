@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { FiDownload } from "react-icons/fi";
 import { useTrail, useSprings, useScroll, animated, config } from '@react-spring/web';
-import * as aboutStyles from "../../styles/components/main/About.module.scss";
+import * as aboutStyles from "../../styles/components/main/about.module.scss";
 import Logo from "./logo";
 interface IAboutProps {
   profile: any[];

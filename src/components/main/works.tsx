@@ -1,6 +1,6 @@
 import React from "react";
-import * as worksStyles from "../../styles/components/main/Works.module.scss";
-import * as worksBgStyles from "../../styles/components/main/WorksBg.module.scss";
+import * as worksStyles from "../../styles/components/main/works.module.scss";
+import * as worksBgStyles from "../../styles/components/main/worksBg.module.scss";
 import { animated } from '@react-spring/web';
 import WorkItem from "./workItem";
 import Company from "./company";

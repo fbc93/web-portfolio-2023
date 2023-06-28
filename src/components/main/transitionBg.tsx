@@ -1,6 +1,6 @@
 import React from "react";
 import { useScroll, animated, useSpring, config } from '@react-spring/web';
-import * as transitionBgStyles from "../../styles/components/main/TransitionBg.module.scss";
+import * as transitionBgStyles from "../../styles/components/main/transitionBg.module.scss";
 
 export default function TransitionBg() {
 
