@@ -1,7 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { animated } from '@react-spring/web';
-import * as companyStyles from "../../styles/components/main/company.module.scss";
+import * as companyStyles from "../../styles/components/main/Company.module.scss";
 
 export default function Company({ springStyle }: any) {
 
