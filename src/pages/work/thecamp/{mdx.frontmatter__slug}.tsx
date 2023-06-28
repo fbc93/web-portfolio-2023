@@ -253,7 +253,7 @@ export default function WorkItemDetail({ data }: IWorkItemDetailProps) {
 
   const { scrollYProgress } = useScroll({
     onChange: ({ value: { scrollYProgress } }) => {
-      console.log("index___", scrollYProgress);
+      //console.log("index___", scrollYProgress);
 
       // Preview
       if (scrollYProgress >= 0 && scrollYProgress <= 0.3) {
