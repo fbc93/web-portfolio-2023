@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FiLink } from "react-icons/fi";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { useTrail, useSpring, useSprings, useScroll, animated, config } from '@react-spring/web';
-import * as workItemStyles from "../../styles/components/main/workItem.module.scss";
+import * as workItemStyles from "../../styles/components/main/WorkItem.module.scss";
 
 interface IWorkItemProps {
   springStyle: any;

@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
-import * as studyStyles from "../../styles/components/main/study.module.scss";
+import * as studyStyles from "../../styles/components/main/Study.module.scss";
 import { StaticImage } from "gatsby-plugin-image";
 import { FiArrowLeftCircle, FiExternalLink } from "react-icons/fi";
 import { useTrail, useSpring, useSprings, useScroll, animated, config } from '@react-spring/web';

@@ -1,5 +1,5 @@
 import React from "react";
-import * as introStyles from "../../styles/components/main/intro.module.scss";
+import * as introStyles from "../../styles/components/main/Intro.module.scss";
 import Logo from "./logo";
 import { useScroll, animated, useSprings, useSpring, config, useTrail } from '@react-spring/web';
 import { FiChevronDown } from "react-icons/fi";
