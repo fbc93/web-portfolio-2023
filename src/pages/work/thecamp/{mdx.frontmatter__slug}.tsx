@@ -4,7 +4,7 @@ import Layout from "../../../components/layout";
 import { SEO } from "../../../components/seo";
 import WorkDetail from "../../../components/detail/workDetail";
 import Footer from "../../../components/layout/footer";
-import { useScroll, animated, useSprings, useSpring, config, useTrail } from '@react-spring/web';
+import { useScroll, animated, useSprings, useSpring, config, useTrail, easings } from '@react-spring/web';
 
 interface IWorkItemDetailProps {
   data: Queries.WorkDetailQuery;
@@ -212,7 +212,9 @@ export default function WorkItemDetail({ data }: IWorkItemDetailProps) {
     from: {
       opacity: 0,
     },
-    config: config.molasses,
+    config: {
+      duration: 500
+    }
   }))
 
   const [nextWorkListTrail, nextWorkListTrailApi] = useTrail(
@@ -220,8 +222,31 @@ export default function WorkItemDetail({ data }: IWorkItemDetailProps) {
     () => ({
       opacity: 0,
       x: -70,
-      config: config.molasses,
       delay: 500,
+    }), []);
+
+
+  //footer
+  const [footerTitle, footerTitleApi] = useSpring(() => ({
+    from: {
+      opacity: 0,
+      transform: "translateY(30px)"
+    },
+    config: {
+      easing: 10
+    }
+  }))
+
+  const words = ['j', 'y', 'j', 'c', 'y', '5', '0', '1', '@', 'n', 'a', 'v', 'e', 'r', '.', 'c', 'o', 'm'];
+  const [footerTrail, footerTrailApi] = useTrail(
+    words.length,
+    () => ({
+      from: {
+        opacity: 0,
+        y: 30,
+        delay: 500,
+      },
+      config: config.stiff
     }), []);
 
 
@@ -438,6 +463,30 @@ export default function WorkItemDetail({ data }: IWorkItemDetailProps) {
       }
 
       //moving text
+      if (scrollYProgress >= 0.9) {
+        footerTitleApi.start({
+          opacity: 1,
+          transform: "translateY(0px)"
+        })
+
+        footerTrailApi.start({
+          opacity: 1,
+          y: 0,
+          delay: 500,
+        })
+
+      } else {
+        footerTitleApi.start({
+          opacity: 0,
+          transform: "translateY(30px)"
+        })
+
+        footerTrailApi.start({
+          opacity: 0,
+          y: 30,
+          delay: 500,
+        })
+      }
     }
   });
 
@@ -463,7 +512,7 @@ export default function WorkItemDetail({ data }: IWorkItemDetailProps) {
         nextWorkListTrail={nextWorkListTrail}
         nextWorkItems={nextWorkItems}
       />
-      <Footer />
+      <Footer footerTitle={footerTitle} footerTrail={footerTrail} />
     </Layout>
   )
 }

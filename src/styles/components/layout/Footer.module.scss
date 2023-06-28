@@ -27,6 +27,8 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+      padding: 1rem;
 
       & > div {
         font-size:8rem;
