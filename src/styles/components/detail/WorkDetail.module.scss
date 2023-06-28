@@ -1,5 +1,5 @@
 .work_detail {
-  padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 5vh);
+  padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 10vh);
   position: relative;
   background-color: #ffffff;
 
@@ -12,7 +12,7 @@
     margin: auto auto 10vh auto;
     justify-content: center;
     display: grid;
-    grid-template-columns: 25% calc(75% - 10rem);
+    grid-template-columns: 20% calc(80% - 10rem);
     align-items: center;
     gap: 10rem;
 
@@ -38,8 +38,11 @@
 @media screen and (max-width:1300px) {
   .work_detail {
     .container {
+      max-width: 100%;
       padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
       padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
+      gap: 5rem;
+      grid-template-columns: 25% calc(75% - 5rem);
     }
   }
 }
@@ -47,24 +50,22 @@
 @media screen and (max-width: 944px) {
   .work_detail {
     .container {
-      gap:5rem;
-      grid-template-columns: 25% calc(75% - 5rem);
+      
     }
   }
 }
 
 @media screen and (max-width: 768px) {
   .work_detail {
-    padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 16vh);
+    padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 14.2rem + 2vh);
 
     .container {
       grid-template-columns: none;
       grid-template-rows: auto;
-      row-gap: 10rem;
-      width: 80%;
+      row-gap: 5rem;
 
       .preview {
-        width: 50%;
+        width: 30%;
         margin: auto;
       }
     }
@@ -73,17 +74,22 @@
 
 @media screen and (max-width: 540px) {
   .work_detail {
-    padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 20vh);
+    padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 14.2rem + 5vh);
 
     .container {
-      width: 100%;
-      row-gap: 7rem;
+      .preview {
+        width: 50%;
+      }
     }
   }
 }
 
 @media screen and (max-width: 460px) {
   .work_detail {
-    padding-top: calc(var(--desktop-header-height) + var(--top-value-header) + 25vh);
+    padding-top: calc(var(--445-header-height) + var(--top-value-header) + 1.5rem + 3vh);
+
+    .container {
+      row-gap: 7rem;
+    }
   }
 }

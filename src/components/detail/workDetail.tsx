@@ -22,7 +22,6 @@ export default function WorkDetail({ data }: IWorkDetailProps) {
 
   return (
     <article className={workDetailStyles.work_detail}>
-      <GoBackBtn />
       <div className={workDetailStyles.container}>
         <div className={workDetailStyles.preview}>
           {cardImage === "miss-soldier-card-renewal" && <img src={missSoldierCardRenewalGif} alt="보고싶은군인 카드 리뉴얼" />}

@@ -82,12 +82,31 @@
     }
 
     .team {
-      font-size:1.8rem;
+      font-size:1.6rem;
+      & > div {
+        .bar {
+          margin: 0 0.5rem;
+        }
+      }
     }
 
     .desc {
       & > p {
         font-size:1.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 944px) {
+  .card {
+    .team {
+      font-size:1.6rem;
+    }
+
+    .desc {
+      & > p {
+        font-size:1.6rem;
       }
     }
   }
