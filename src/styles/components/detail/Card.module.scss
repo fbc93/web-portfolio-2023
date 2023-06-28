@@ -103,12 +103,6 @@
     .team {
       font-size:1.6rem;
     }
-
-    .desc {
-      & > p {
-        font-size:1.6rem;
-      }
-    }
   }
 }
 
@@ -138,8 +132,7 @@
 
     .desc {
       & > p {
-        font-size:1.6rem;
-        line-height: 180%;
+        line-height: 200%;
       }
 
       & > p:first-child {
@@ -164,6 +157,12 @@
 
     .team {
       font-size: 1.4rem;
+    }
+
+    .desc {
+      & > p {
+        font-size: 1.6rem;
+      }
     }
   }
 }

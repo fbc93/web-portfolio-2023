@@ -38,7 +38,7 @@
       }
 
       & > div:first-child {
-        aspect-ratio: 304/222;
+        aspect-ratio: 305/204;
         border:1px solid #cccccc;
         & > div {
           width: 100%;
@@ -56,17 +56,32 @@
 
 @media screen and (max-width: 1300px) {
   .image_layout_container {
-    gap: 3rem;
+    max-width: 100%;
+    gap: 10rem;
     padding-left: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
     padding-right: clamp(var(--mobile-padding-vh), 5vw, var(--desktop-padding-vh));
-    grid-template-columns: calc(50% - 1.5rem) calc(50% - 1.5rem);
+    grid-template-columns: none;
+    grid-template-rows: 1fr;
+
+    .image_layout {
+      grid-template-columns: calc(30% - 2.5rem) calc(70% - 2.5rem);
+      gap: 5rem;
+
+      .content_container {
+        & > div:last-child {
+          font-size:1.8rem;
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 944px) {
   .image_layout_container {
-    width: 80%;
+    width: 100%;
     grid-template-columns: calc(50% - 1.5rem) calc(50% - 1.5rem);
+    gap: 3rem;
+    align-items: start;
 
     .image_layout {
       grid-template-columns: none;
@@ -83,7 +98,7 @@
 
     .image_layout {
       grid-template-columns: none;
-      gap: 5vh;
+      gap: 2vh;
     }
   }
 }
@@ -93,12 +108,17 @@
 @media screen and (max-width: 540px) {
   .image_layout_container {
     grid-template-columns: none;
-    grid-template-rows: 50% 50%;
     
     .image_layout { 
       .preview {
-        width: 50%;
+        width: 100%;
         margin: auto;
+      }
+
+      .content_container {
+        & > div:last-child {
+          font-size: 1.6rem;
+        }
       }
     }
   }
