@@ -190,7 +190,7 @@ const IndexPage = ({ data }: PageProps<Queries.WorkItemDataQuery>) => {
       opacity: 0,
       transform: 'translateY(50px)',
       config: config.stiff,
-      delay: 500,
+      delay: 1000,
     }), []);
 
 
@@ -503,13 +503,13 @@ const IndexPage = ({ data }: PageProps<Queries.WorkItemDataQuery>) => {
       if (scrollYProgress >= 0.25 && scrollYProgress <= 0.7) {
         worksTextBgApi.start({
           opacity: 1,
-          transform: 'translateY(50px)',
+          transform: 'translateY(0px)',
         })
 
       } else {
         worksTextBgApi.start({
           opacity: 0,
-          transform: 'translateY(0px)',
+          transform: 'translateY(50px)',
         })
       }
 
@@ -518,7 +518,7 @@ const IndexPage = ({ data }: PageProps<Queries.WorkItemDataQuery>) => {
         companyApi.start({
           opacity: 1,
           transform: 'translateY(0px)',
-          delay: 200,
+          delay: 500,
         })
 
       } else {
@@ -533,7 +533,7 @@ const IndexPage = ({ data }: PageProps<Queries.WorkItemDataQuery>) => {
         workItemSpringsApi.start({
           opacity: 1,
           transform: 'translateY(0px)',
-          delay: 600,
+          delay: 1000,
         })
 
       } else {

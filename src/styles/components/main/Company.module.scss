@@ -14,12 +14,40 @@
 
   .company_info {
     display: grid;
-    grid-template-rows: 25rem 6rem;
+    grid-template-rows: 1fr 1fr;
     justify-content: flex-start;
     align-items: start;
     position: relative;
     top: -2.5rem;
     left: -2rem;
+    gap: 2rem;
+
+    .app {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap:1rem;
+      width: fit-content;
+      
+      & > a {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+      }
+
+      .app_store {
+        background-image: url("../../../../static/images/app_store.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      .google_play {
+        background-image: url("../../../../static/images/google_play.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
 
     .logo {
       width: 20rem;
@@ -35,7 +63,7 @@
         max-width: 38rem;
         width: 100%;
         gap: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
 
         .text {
           font-size: 3.5rem;
@@ -64,7 +92,7 @@
     .name {
       font-size:1.8rem;
       color: grey;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .content {

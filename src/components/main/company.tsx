@@ -2,6 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { animated } from '@react-spring/web';
 import * as companyStyles from "../../styles/components/main/Company.module.scss";
+import { Link } from "gatsby";
 
 export default function Company({ springStyle }: any) {
 
@@ -13,10 +14,15 @@ export default function Company({ springStyle }: any) {
           <StaticImage width={500} src="../../../static/images/thecamp_logo.jpg" alt="THE CAMP" />
         </div>
         <div className={companyStyles.container}>
+          <div className={companyStyles.app}>
+            <a className={companyStyles.app_store} href="https://apps.apple.com/kr/app/the-camp/id1364855523" target="_blank"></a>
+            <a className={companyStyles.google_play} href="https://play.google.com/store/apps/details?id=com.enabledaonsoft.thecamp" target="_blank"></a>
+          </div>
           <div className={companyStyles.title}>
             <div className={companyStyles.text}>더 캠프</div>
             <div className={companyStyles.duration}>21/09 - 23/02</div>
           </div>
+
           <div className={companyStyles.my_work}>UI 개발 / 퍼블리싱</div>
         </div>
       </div>
