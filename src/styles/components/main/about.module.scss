@@ -19,11 +19,12 @@
 
       .profile {
         overflow: hidden;
-        width: 46rem;
+        width: 40rem;
         aspect-ratio: 1/1;
         border-radius: 35px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         margin-top: 5rem;
+        border: 1px solid #999999;
         filter: saturate(0.5);
         & > div {
           width: 100%;
@@ -32,7 +33,7 @@
   
       .animation_text {
         position: absolute;
-        bottom: 87%;
+        bottom: 93%;
         right: -50px;
         text-align: left;
 
@@ -49,6 +50,8 @@
           grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
           column-gap: 5px;
           text-align: center;
+          position: relative;
+          z-index: 10;
 
           & > div {
             position: relative;
@@ -96,26 +99,27 @@
         display: flex;
         justify-content: left;
         align-items: center;
+        gap: 1rem;
 
         & > span {
-          font-size: 3rem;
-          font-weight: 400;
-          color: var(--gray-text);
+          font-size: 2rem;
+          color:#999999;
+          font-weight: 800;
           display: inline-block;
-          line-height: 3rem;
-          font-family: monospace;
+          font-family: "Ysabeau SC", sans-serif;
         }
 
         & > svg {
-          width: 13rem;
-          height: fit-content;
+          width: fit-content;
+          height: 1.6rem;
+          filter: grayscale(1);
         }
       }
   
       .content_desc {
         text-align: left;
-        margin: 2.5rem 0;
-        font-size:1.7rem;
+        margin: 2rem 0 2.5rem;
+        font-size: 2rem;
         line-height: 190%;
 
         & > p {
@@ -129,12 +133,17 @@
         padding: 1.5rem 2.5rem;
         color: var(--white-text);
         border-radius: 5px;
+        transition: background-color 0.2s ease-in-out;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        &:hover {
+          background-color: #1423ae;
+        }
 
         & > a {
           display: flex;
           justify-content: left;
           align-items: center;
-          font-size:1.5rem;
+          font-size: 1.8rem;
 
           & > span {
             display: inline-block;
@@ -152,14 +161,14 @@
     .container {
       display: grid;
       grid-template-columns: auto;
-      row-gap: 5rem;
+      row-gap: 10rem;
       margin-top: 15rem;
       padding-bottom: 10vh;
 
       .visual {
         .profile {
-          width: 50rem;
-          margin: 12rem auto auto;
+          width: 40rem;
+          margin: 8rem auto auto;
         }
 
         .animation_text {
@@ -168,11 +177,21 @@
           bottom: 87%;
           left: 0;
           text-align: left;
+
+          .first_text {
+            text-align: center;
+          }
+
+          .second_text {
+            justify-content: center;
+          }
         }
       }
 
       .content {
         margin-left:0;
+        width: 100%;
+        max-width: 100rem;
       }
     }
   }
@@ -181,8 +200,9 @@
 @media screen and (max-width: 768px) { 
   .about {
     .container {
-      .visual {
+      gap: 5rem;
 
+      .visual {
         .profile {
           width: 45rem;
           margin: 9rem auto auto;
@@ -218,7 +238,19 @@
         }
       }
 
-      .content {}
+      .content {
+        .content_desc {
+          
+        }
+
+        .download_link {
+          width: 100%;
+
+          & > a {
+            justify-content: center;
+          }
+        }
+      }
     }
   }
 }
@@ -234,8 +266,6 @@
         }
 
         .animation_text {
-          .first_text {}
-
           .second_text {
             grid-template-columns: 45px 45px 45px 45px 45px 45px 45px 45px;
             width: fit-content;
@@ -261,6 +291,7 @@
           padding: 1.5rem 2.5rem;
           & > a {
             justify-content: center;
+            font-size: 1.6rem;
           }
         }
       }
@@ -280,8 +311,8 @@
         }
 
         .animation_text {
-          .first_text {}
-
+          bottom: 95%;
+          
           .second_text {
             grid-template-columns: 35px 35px 35px 35px 35px 35px 35px 35px;
 
