@@ -1,37 +1,37 @@
 .company {
   width: 90rem;
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 30% 70%;
   justify-content: center;
   backdrop-filter: blur(10px);
   background-color: hsla(0,0%,92%,.502);
   border-radius: 2rem;
   height: auto;
   color:#333333;
-  margin-left: 2rem;
   margin-top: 2.5rem;
   border:1px solid #cccccc;
 
   .company_info {
+    width: fit-content;
     display: grid;
     grid-template-rows: 1fr 1fr;
     justify-content: flex-start;
     align-items: start;
     position: relative;
     top: -2.5rem;
-    left: -2rem;
+    left: 4rem;
     gap: 2rem;
 
     .app {
       margin-bottom: 1.5rem;
       display: flex;
-      gap:1rem;
+      gap:1.5rem;
       width: fit-content;
       
       & > a {
         display: inline-block;
-        width: 2rem;
-        height: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
       }
 
       .app_store {
@@ -60,10 +60,10 @@
     .container {
       .title {
         display: flex;
-        max-width: 38rem;
+        flex-direction: column;
         width: 100%;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
+        gap: 2rem;
+        margin-bottom: 1rem;
 
         .text {
           font-size: 3.5rem;
@@ -90,7 +90,7 @@
     padding: 4rem 4rem 4rem 2rem;
 
     .name {
-      font-size:1.8rem;
+      font-size: 2rem;
       color: grey;
       margin-bottom: 1.5rem;
     }
@@ -156,8 +156,9 @@
 
 @media screen and (max-width: 1300px){
   .company {
-    width: calc(100% - 2rem);
-    margin: 2.5rem auto 0 2rem;
+    width: 100%;
+    max-width: 83rem;
+    margin: 2.5rem auto auto auto;
 
     .company_desc {
       padding: 4rem 4rem 4rem 4rem;
@@ -165,37 +166,91 @@
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 944px){
   .company {
-    grid-template-columns: auto;
-    margin: 2.5rem auto auto 3rem;
-    width: calc(100% - 3rem);
+    max-width: 100%;
+    width: 100%;
+    grid-template-columns: none;
+    margin:0;
+    padding: 3rem 0;
 
     .company_info {
-      grid-template-columns: 16rem 1fr;
-      grid-template-rows:none ;
-      align-items: end;
-      column-gap: 3rem;
-      left: -3rem;
-
+      position: static;
+      display: flex;
+      justify-content: left;
+      width: 100%;
+      align-items: center;
+      
       .logo {
-        width: 16rem;
+        width: 15rem;
       }
 
       .container {
         .title {
-          gap: 1.5rem;
+          .text {
+            font-size:3rem;
+          }
+        }
+      }
+    }
+  
+    .company_desc {
+      padding: 3rem 0 0;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 768px){
+  .company {
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    padding: 2.5rem;
+
+    .company_info {
+      grid-template-columns: 16rem 1fr;
+      grid-template-rows:none;
+      align-items: center;
+      column-gap: 3rem;
+      left: -3rem;
+
+      .logo {
+        width: 12rem;
+      }
+
+      .container {
+        .app {
+          margin-bottom: 1.5rem;
+
+          & > a {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+
+        .title {
+          gap: 1rem;
           flex-direction: column;
+
+          .text {
+            font-size:2.5rem;
+          }
 
           .duration {
             font-size:1.5rem;
           }
         }
+
+        .my_work {
+          font-size:1.4rem;
+        }
       }
     }
 
     .company_desc {
-      padding: 2rem 3rem 5rem 3rem;
+      padding: 4rem 0rem 1rem 0rem;
     }
   }
 }
@@ -207,12 +262,10 @@
       column-gap: 2rem;
 
       .logo {
-        width: 15rem;
+        width: 10rem;
       }
 
       .container {
-        margin-top: 3rem;
-
         .title {
           .text {
             font-size: 2.5rem;
@@ -222,7 +275,7 @@
     }
     
     .company_desc {
-      padding: 1rem 2.5rem 4rem 2.5rem;
+      padding: 3rem 0rem 0rem 0rem;
 
       .content {
         font-size: 1.4rem;
@@ -259,23 +312,16 @@
 @media screen and (max-width: 460px) {
 
   .company {
-    width: calc(100% - 1rem);
-    margin: 2rem 0 auto 1rem;
-
     .company_info {
       grid-template-columns: 120px 1fr;
       column-gap: 3rem;
 
       .logo {
         width: 10rem;
-        margin-left: 2rem;
         border-radius: 1.5rem;
-        margin-bottom: 1.5rem;
       }
 
       .container {
-        margin-top: 5rem;
-
         .title {
           .text {
             font-size: 2rem;
@@ -289,7 +335,9 @@
     }
     
     .company_desc {
-      
+      .name {
+        font-size: 1.6rem;
+      }
     }
   }
 }
