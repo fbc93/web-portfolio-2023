@@ -43,7 +43,7 @@ export default function Header() {
           <h1 className={headerStyles.title}>Younhwa's Web Portfolio</h1>
           <div className={headerStyles.status}>
             <div className={headerStyles.text}>Available Now</div>
-            <div className={headerStyles.update}>Last update 2023.06.29</div>
+            <div className={headerStyles.update}>Latest update 2023.06.29</div>
           </div>
         </div>
         <div className={headerStyles.line}></div>
