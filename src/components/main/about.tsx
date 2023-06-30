@@ -86,14 +86,14 @@ export default function About({
             </animated.div>
           ))}
 
-          {downloadBtn.map((props, idx) => (
+          {/* {downloadBtn.map((props, idx) => (
             <animated.div className={aboutStyles.download_link} style={props} key={idx}>
               <Link to="/">
                 <FiDownload />
                 <span>자기소개 자세히 보기</span>
               </Link>
             </animated.div>
-          ))}
+          ))} */}
         </div>
       </div>
     </article>
